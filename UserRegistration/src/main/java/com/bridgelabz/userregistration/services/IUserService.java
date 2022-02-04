@@ -19,8 +19,10 @@ public interface IUserService {
 	public User readUserById(String id, String token);
 
 	public String deleteUserById(String id, String token);
-	
+
 	public User userVerification(String token);
-	
-	public User userLogin(String email ,String password);
+
+	public User userLogin(String email, String password);
+
+	public User setNewPassword(String token, String newPassword);
 }

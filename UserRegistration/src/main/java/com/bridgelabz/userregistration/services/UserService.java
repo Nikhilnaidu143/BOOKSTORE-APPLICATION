@@ -2,6 +2,7 @@ package com.bridgelabz.userregistration.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class UserService implements IUserService {
 		if (!userByToken.get().isVerify()) {
 			throw new UserException(NON_VERIFIED_USER);
 		} else {
-				return "Hello Nikhil...!";
+			return "Hello Nikhil...!";
 		}
 	}
 
@@ -64,8 +65,9 @@ public class UserService implements IUserService {
 				throw new UserException(ID_NOT_FOUND);
 			} else {
 				User userData = new User(Long.parseLong(id), user);
-				if(findUserById.get().isVerify()) {
-					userData.setVerify(true);;
+				if (findUserById.get().isVerify()) {
+					userData.setVerify(true);
+					;
 				}
 				return userRepository.save(userData);
 			}
@@ -97,8 +99,7 @@ public class UserService implements IUserService {
 			throw new UserException(NON_VERIFIED_USER);
 		} else {
 			if (userByTokenId.isPresent()) {
-				return userRepository.findById(Long.parseLong(id))
-						.orElseThrow(() -> new UserException(ID_NOT_FOUND));
+				return userRepository.findById(Long.parseLong(id)).orElseThrow(() -> new UserException(ID_NOT_FOUND));
 			} else {
 				return null;
 			}
@@ -122,7 +123,7 @@ public class UserService implements IUserService {
 			}
 		}
 	}
-	
+
 	/*** Verifying user. ***/
 	@Override
 	public User userVerification(String token) {
@@ -135,20 +136,43 @@ public class UserService implements IUserService {
 			return userRepository.save(findUserByTokenId.get());
 		}
 	}
-	
+
 	/*** User login ***/
 	@Override
-	public User userLogin(String email ,String password) {
+	public User userLogin(String email, String password) {
 		List<User> users = userRepository.findUserByEmail(email);
-		
-		if(users.size() < 1) {
+
+		if (users.size() < 1) {
 			throw new UserException(USER_NOT_FOUND);
-		}
-		else if(!users.get(0).getPassword().equals(password)) {
+		} else if (!users.get(0).getPassword().equals(password)) {
 			throw new UserException("Email or Password is incorrect..!");
-		}
-		else {
+		} else {
 			return users.get(0);
 		}
 	}
+
+	/*** Setting new password. ***/
+	@Override
+	public User setNewPassword(String token, String newPassword) {
+		Long tokenId = tokenUtil.decodeToken(token);
+		Optional<User> userByTokenId = userRepository.findById(tokenId);
+		if (!userByTokenId.get().isVerify()) {
+			throw new UserException(NON_VERIFIED_USER);
+		} else {
+			if (!userByTokenId.isPresent()) {
+				throw new UserException(USER_NOT_FOUND);
+			} else {
+				User user = userByTokenId.get();
+				boolean pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$")
+						.matcher(newPassword).matches();
+				if (!pattern) {
+					throw new UserException("Password Validation failed..!");
+				} else {
+					user.setPassword(newPassword);
+					return userRepository.save(user);
+				}
+			}
+		}
+	}
+
 }

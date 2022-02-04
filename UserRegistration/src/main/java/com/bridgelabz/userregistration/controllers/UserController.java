@@ -104,11 +104,18 @@ public class UserController {
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
-	/*** User loggin ***/
+	/*** User login ***/
 	@GetMapping(value = "login/{email}/{password}")
 	public ResponseEntity<ResponseDTO> login(@PathVariable String email , @PathVariable String password) {
 		User userData = userService.userLogin(email , password);
 		ResponseDTO responseDTO = new ResponseDTO("Login successfull..!", userData, tokenUtil.createToken(userData.getId()));
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
+	
+	@PutMapping(value = "newPassword/{newPassword}")
+	public ResponseEntity<ResponseDTO> newPassword(@PathVariable String newPassword , @RequestParam(value = "token") String token) {
+		User userData = userService.setNewPassword(token , newPassword);
+		ResponseDTO responseDTO = new ResponseDTO("PassWord has been changed successfully..!", userData, token);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 }
