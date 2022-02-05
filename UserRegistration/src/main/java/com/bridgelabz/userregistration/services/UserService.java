@@ -24,7 +24,12 @@ public class UserService implements IUserService {
 	private static final String TOKEN_INVALID = "OOPS! Token is invalid....!";
 	private static final String NON_VERIFIED_USER = "OOPS! not verified user...!";
 	private static final String USER_NOT_FOUND = "OOPS! User is not there in database.";
+	private static final String PASSWORD_NOTVALID = "Password Validation failed..!";
 
+	/*** Constant password and email Regex patterns. ****/
+	private static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$";
+	private static final String EMAIL_REGEX = "^[\\w+-]+(\\.[\\w+-]+)*@[\\w]+(\\.[\\w]+)?(?=(\\.[A-Za-z_]{2,3}$|\\.[a-zA-Z]{2,3}$)).*$";
+	
 	/*** Autowired annotation is used for automatic dependency injection. ***/
 	@Autowired
 	private UserRepository userRepository;
@@ -47,6 +52,13 @@ public class UserService implements IUserService {
 	/*** Adding user ***/
 	@Override
 	public User addUser(UserDTO user) {
+		Long count = userRepository.count();
+		if(count > 0) {
+			List<User> users = userRepository.findUserByEmail(user.email);
+			if(users.size() > 0) {
+				throw new UserException("Email is alread existed. Please login...!");
+			}
+		} 
 		return userRepository.save(new User(user));
 	}
 
@@ -141,11 +153,21 @@ public class UserService implements IUserService {
 	@Override
 	public User userLogin(String email, String password) {
 		List<User> users = userRepository.findUserByEmail(email);
+		boolean pattern_password_matching = Pattern.compile(PASSWORD_REGEX)
+				.matcher(password).matches();
+		boolean pattern_email_matching = Pattern.compile(EMAIL_REGEX)
+				.matcher(email).matches();
 
-		if (users.size() < 1) {
+		if (!pattern_password_matching && !pattern_email_matching) {
+			throw new UserException("Email & Password validation failed...!");
+		} else if (!pattern_email_matching) {
+			throw new UserException("Email validation failed...!");
+		} else if (!pattern_password_matching) {
+			throw new UserException(PASSWORD_NOTVALID);
+		} else if (users.size() < 1) {
 			throw new UserException(USER_NOT_FOUND);
 		} else if (!users.get(0).getPassword().equals(password)) {
-			throw new UserException("Email or Password is incorrect..!");
+			throw new UserException("Password is incorrect..!");
 		} else {
 			return users.get(0);
 		}
@@ -163,10 +185,10 @@ public class UserService implements IUserService {
 				throw new UserException(USER_NOT_FOUND);
 			} else {
 				User user = userByTokenId.get();
-				boolean pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$")
+				boolean pattern = Pattern.compile(PASSWORD_REGEX)
 						.matcher(newPassword).matches();
 				if (!pattern) {
-					throw new UserException("Password Validation failed..!");
+					throw new UserException(PASSWORD_NOTVALID);
 				} else {
 					user.setPassword(newPassword);
 					return userRepository.save(user);
