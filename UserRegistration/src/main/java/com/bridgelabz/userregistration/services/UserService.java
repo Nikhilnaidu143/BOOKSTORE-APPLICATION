@@ -29,7 +29,7 @@ public class UserService implements IUserService {
 	/*** Constant password and email Regex patterns. ****/
 	private static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$";
 	private static final String EMAIL_REGEX = "^[\\w+-]+(\\.[\\w+-]+)*@[\\w]+(\\.[\\w]+)?(?=(\\.[A-Za-z_]{2,3}$|\\.[a-zA-Z]{2,3}$)).*$";
-	
+
 	/*** Autowired annotation is used for automatic dependency injection. ***/
 	@Autowired
 	private UserRepository userRepository;
@@ -53,12 +53,12 @@ public class UserService implements IUserService {
 	@Override
 	public User addUser(UserDTO user) {
 		Long count = userRepository.count();
-		if(count > 0) {
+		if (count > 0) {
 			List<User> users = userRepository.findUserByEmail(user.email);
-			if(users.size() > 0) {
+			if (users.size() > 0) {
 				throw new UserException("Email is alread existed. Please login...!");
 			}
-		} 
+		}
 		return userRepository.save(new User(user));
 	}
 
@@ -79,7 +79,6 @@ public class UserService implements IUserService {
 				User userData = new User(Long.parseLong(id), user);
 				if (findUserById.get().isVerify()) {
 					userData.setVerify(true);
-					;
 				}
 				return userRepository.save(userData);
 			}
@@ -153,10 +152,8 @@ public class UserService implements IUserService {
 	@Override
 	public User userLogin(String email, String password) {
 		List<User> users = userRepository.findUserByEmail(email);
-		boolean pattern_password_matching = Pattern.compile(PASSWORD_REGEX)
-				.matcher(password).matches();
-		boolean pattern_email_matching = Pattern.compile(EMAIL_REGEX)
-				.matcher(email).matches();
+		boolean pattern_password_matching = Pattern.compile(PASSWORD_REGEX).matcher(password).matches();
+		boolean pattern_email_matching = Pattern.compile(EMAIL_REGEX).matcher(email).matches();
 
 		if (!pattern_password_matching && !pattern_email_matching) {
 			throw new UserException("Email & Password validation failed...!");
@@ -185,8 +182,7 @@ public class UserService implements IUserService {
 				throw new UserException(USER_NOT_FOUND);
 			} else {
 				User user = userByTokenId.get();
-				boolean pattern = Pattern.compile(PASSWORD_REGEX)
-						.matcher(newPassword).matches();
+				boolean pattern = Pattern.compile(PASSWORD_REGEX).matcher(newPassword).matches();
 				if (!pattern) {
 					throw new UserException(PASSWORD_NOTVALID);
 				} else {
