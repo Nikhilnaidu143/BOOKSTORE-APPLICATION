@@ -1,0 +1,47 @@
+2022-02-07 13:28.27.232 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:55] Starting OrderServiceApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 12992 (C:\Users\VICKY\Desktop\BookStoreCFP\OrderService\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\OrderService)
+2022-02-07 13:28.27.237 [DEBUG] [restartedMain] [c.b.o.OrderServiceApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:28.27.237 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:641] The following profiles are active: PROD
+2022-02-07 13:28.27.438 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-07 13:28.27.439 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-07 13:28.30.142 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 13:28.30.289 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 118 ms. Found 1 JPA repository interfaces.
+2022-02-07 13:28.32.439 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 13:28.32.468 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 13:28.32.469 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 13:28.32.834 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 13:28.32.835 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 5392 ms
+2022-02-07 13:28.34.315 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-02-07 13:28.35.378 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-02-07 13:28.38.375 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 13:28.41.341 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 13:28.44.72 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 13:28.44.161 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 13:28.44.216 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:61] Started OrderServiceApplication in 18.424 seconds (JVM running for 20.108)
+2022-02-07 13:28.44.263 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:15] Order Service Started in PROD Environment...!
+2022-02-07 13:28.44.265 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:17] Order service DataBase User Is cfpbookstoreuser.
+2022-02-07 13:29.04.543 [INFO] [Thread-5] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 13:29.04.555 [INFO] [Thread-5] [c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-02-07 13:29.04.597 [INFO] [Thread-5] [c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-02-07 13:29.19.395 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:55] Starting OrderServiceApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 12992 (C:\Users\VICKY\Desktop\BookStoreCFP\OrderService\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\OrderService)
+2022-02-07 13:29.19.398 [DEBUG] [restartedMain] [c.b.o.OrderServiceApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:29.19.401 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:641] The following profiles are active: PROD
+2022-02-07 13:29.22.383 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 13:29.22.446 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interfaces.
+2022-02-07 13:29.22.905 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 13:29.22.907 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 13:29.22.908 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 13:29.23.477 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 13:29.23.478 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 4060 ms
+2022-02-07 13:29.23.958 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-3 - Starting...
+2022-02-07 13:29.24.266 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-3 - Start completed.
+2022-02-07 13:29.25.492 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 13:29.26.670 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 13:29.27.402 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 13:29.27.415 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 13:29.27.429 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:61] Started OrderServiceApplication in 8.3 seconds (JVM running for 63.321)
+2022-02-07 13:29.27.432 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 13:29.27.442 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:15] Order Service Started in PROD Environment...!
+2022-02-07 13:29.27.442 [INFO] [restartedMain] [c.b.o.OrderServiceApplication:17] Order service DataBase User Is cfpbookstoreuser.
+2022-02-07 13:30.20.332 [INFO] [Thread-11] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 13:30.20.335 [INFO] [Thread-11] [c.z.h.HikariDataSource:350] HikariPool-3 - Shutdown initiated...
+2022-02-07 13:30.20.391 [INFO] [Thread-11] [c.z.h.HikariDataSource:352] HikariPool-3 - Shutdown completed.
