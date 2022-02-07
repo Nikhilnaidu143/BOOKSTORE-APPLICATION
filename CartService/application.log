@@ -1,0 +1,46 @@
+2022-02-07 15:40.51.13 [INFO] [restartedMain] [c.b.c.CartServiceApplication:55] Starting CartServiceApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 38432 (C:\Users\VICKY\Desktop\BookStoreCFP\CartService\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\CartService)
+2022-02-07 15:40.51.14 [DEBUG] [restartedMain] [c.b.c.CartServiceApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 15:40.51.29 [INFO] [restartedMain] [c.b.c.CartServiceApplication:641] The following profiles are active: PROD
+2022-02-07 15:40.52.224 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 15:40.52.284 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interfaces.
+2022-02-07 15:40.52.784 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 15:40.52.787 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 15:40.52.788 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 15:40.52.912 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 15:40.52.913 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1873 ms
+2022-02-07 15:40.53.228 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-2 - Starting...
+2022-02-07 15:40.53.302 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-2 - Start completed.
+2022-02-07 15:40.53.749 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 15:40.54.662 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 15:40.55.77 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 15:40.55.109 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 15:40.55.130 [INFO] [restartedMain] [c.b.c.CartServiceApplication:61] Started CartServiceApplication in 4.65 seconds (JVM running for 47.254)
+2022-02-07 15:40.55.138 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 15:40.55.140 [INFO] [restartedMain] [c.b.c.CartServiceApplication:15] Cart Service Started in PROD Environment...!
+2022-02-07 15:40.55.141 [INFO] [restartedMain] [c.b.c.CartServiceApplication:16] Cart Service DataBase User Is cfpbookstoreuser.
+2022-02-07 15:41.07.272 [INFO] [Thread-7] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 15:41.07.277 [INFO] [Thread-7] [c.z.h.HikariDataSource:350] HikariPool-2 - Shutdown initiated...
+2022-02-07 15:41.07.413 [INFO] [Thread-7] [c.z.h.HikariDataSource:352] HikariPool-2 - Shutdown completed.
+2022-02-07 15:41.20.728 [INFO] [restartedMain] [c.b.c.CartServiceApplication:55] Starting CartServiceApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 38432 (C:\Users\VICKY\Desktop\BookStoreCFP\CartService\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\CartService)
+2022-02-07 15:41.20.728 [DEBUG] [restartedMain] [c.b.c.CartServiceApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 15:41.20.729 [INFO] [restartedMain] [c.b.c.CartServiceApplication:641] The following profiles are active: PROD
+2022-02-07 15:41.22.616 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 15:41.22.661 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interfaces.
+2022-02-07 15:41.23.480 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 15:41.23.511 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 15:41.23.512 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 15:41.23.617 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 15:41.23.618 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 2874 ms
+2022-02-07 15:41.24.183 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-4 - Starting...
+2022-02-07 15:41.24.628 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-4 - Start completed.
+2022-02-07 15:41.24.794 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 15:41.25.851 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 15:41.26.722 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 15:41.26.965 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 15:41.27.08 [INFO] [restartedMain] [c.b.c.CartServiceApplication:61] Started CartServiceApplication in 7.999 seconds (JVM running for 79.133)
+2022-02-07 15:41.27.99 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 15:41.27.112 [INFO] [restartedMain] [c.b.c.CartServiceApplication:15] Cart Service Started in PROD Environment...!
+2022-02-07 15:41.27.115 [INFO] [restartedMain] [c.b.c.CartServiceApplication:16] Cart Service DataBase User Is cfpbookstoreuser.
+2022-02-07 15:41.39.509 [INFO] [Thread-15] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 15:41.39.514 [INFO] [Thread-15] [c.z.h.HikariDataSource:350] HikariPool-4 - Shutdown initiated...
+2022-02-07 15:41.39.655 [INFO] [Thread-15] [c.z.h.HikariDataSource:352] HikariPool-4 - Shutdown completed.
