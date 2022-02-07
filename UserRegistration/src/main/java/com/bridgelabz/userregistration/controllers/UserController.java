@@ -67,11 +67,11 @@ public class UserController {
 	public ResponseEntity<ResponseDTO> update(@Valid @RequestBody UserDTO user, @PathVariable String id,
 			@RequestParam(value = "token") String token) {
 		User userData = userService.updateUserDetails(user, id, token);
-		ResponseDTO responseDTO = new ResponseDTO("Put Call for user successfull..!", userData, token);
+		ResponseDTO responseDTO = new ResponseDTO("Put Call for user successfull..!", userData, tokenUtil.createToken(Long.parseLong(id)));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
-	/*** Read All user deatils . ***/
+	/*** Read All user details . ***/
 	@GetMapping(value = "/readAll")
 	public ResponseEntity<ResponseDTO> readAll(@RequestParam(value = "token") String token) {
 		List<User> usersData = userService.readAllUsersData(token);
@@ -84,7 +84,7 @@ public class UserController {
 	public ResponseEntity<ResponseDTO> getEmployee(@PathVariable String id,
 			@RequestParam(value = "token") String token) {
 		User userData = userService.readUserById(id, token);
-		ResponseDTO responseDTO = new ResponseDTO("Read Call for ID successfull..!", userData, token);
+		ResponseDTO responseDTO = new ResponseDTO("Read Call for ID successfull..!", userData, tokenUtil.createToken(Long.parseLong(id)));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
@@ -92,7 +92,7 @@ public class UserController {
 	@DeleteMapping(value = "/delete/{id}")
 	public ResponseEntity<ResponseDTO> delete(@PathVariable String id, @RequestParam(value = "token") String token) {
 		String bodyMessage = userService.deleteUserById(id, token);
-		ResponseDTO responseDTO = new ResponseDTO("Delete Call for ID successfull..!", bodyMessage, token);
+		ResponseDTO responseDTO = new ResponseDTO("Delete Call for ID successfull..!", bodyMessage, tokenUtil.createToken(Long.parseLong(id)));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	

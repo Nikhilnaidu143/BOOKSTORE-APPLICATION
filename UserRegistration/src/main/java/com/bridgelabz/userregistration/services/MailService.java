@@ -22,7 +22,7 @@ public class MailService implements IMailService {
 	// java mail service
 	@Override
 	public void send(Email email) {
-		final String fromEmail = "nnikhil976@gmail.com";
+		final String fromEmail = email.getFrom();
 		// requires valid gmail id
 		final String password = "8179898350.";
 		Properties props = new Properties();
@@ -47,7 +47,7 @@ public class MailService implements IMailService {
 			msg.addHeader("format", "flowed");
 			msg.addHeader("Content-Transfer-Encoding", "8bit");
 			msg.setFrom(new InternetAddress("no_reply@gmail.com", "NoReply"));
-			msg.setReplyTo(InternetAddress.parse(email.getFrom(), false));
+			msg.setReplyTo(InternetAddress.parse(fromEmail, false));
 			msg.setSubject(email.getSubject(), "UTF-8");
 			msg.setText(email.getBody(), "UTF-8");
 			msg.setSentDate(new Date());
@@ -62,7 +62,7 @@ public class MailService implements IMailService {
 	// body for the given user link is created here
 	@Override
 	public String getLink(String token) {
-		return "http://localhost:8080/user/verify/" + token;
+		return "http://localhost:8081/user/verify/" + token;
 	}
 
 }

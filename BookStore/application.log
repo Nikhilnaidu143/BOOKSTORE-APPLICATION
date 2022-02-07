@@ -1,0 +1,326 @@
+2022-02-07 09:49.17.764 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:49.17.765 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:49.17.766 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:49.20.826 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:49.20.973 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:49.22.350 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:49.22.352 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:49.22.429 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:49.22.643 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:49.22.644 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 4842 ms
+2022-02-07 09:49.22.902 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-2 - Starting...
+2022-02-07 09:49.22.969 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-2 - Start completed.
+2022-02-07 09:49.23.133 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:49.24.335 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:49.25.517 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:49.25.557 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:49.25.571 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 8.949 seconds (JVM running for 36.15)
+2022-02-07 09:49.25.583 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:49.25.585 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:49.25.585 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:49.37.664 [INFO] [Thread-7] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:49.37.668 [INFO] [Thread-7] [c.z.h.HikariDataSource:350] HikariPool-2 - Shutdown initiated...
+2022-02-07 09:49.37.702 [INFO] [Thread-7] [c.z.h.HikariDataSource:352] HikariPool-2 - Shutdown completed.
+2022-02-07 09:49.48.900 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:49.48.904 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:49.48.905 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:49.50.520 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:49.50.621 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 98 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:49.52.937 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:49.52.939 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:49.52.940 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:49.53.292 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:49.53.293 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 4377 ms
+2022-02-07 09:49.53.826 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-4 - Starting...
+2022-02-07 09:49.53.992 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-4 - Start completed.
+2022-02-07 09:49.55.143 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:49.55.972 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:49.56.904 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:49.56.917 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:49.56.924 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 8.337 seconds (JVM running for 67.503)
+2022-02-07 09:49.56.927 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:49.56.930 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:49.56.930 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:50.26.446 [INFO] [http-nio-8080-exec-2] [o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-07 09:51.43.490 [WARN] [http-nio-8080-exec-10] [o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [com.bridgelabz.bookstore.exceptions.customexceptions.BookException: OOPS! ID not found in the database...!]
+2022-02-07 09:52.56.764 [WARN] [http-nio-8080-exec-5] [o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.bookstore.dto.ResponseDTO> com.bridgelabz.bookstore.controllers.BookController.insert(com.bridgelabz.bookstore.dto.BookDTO): [Field error in object 'bookDTO' on field 'book_name': rejected value [he Memento]; codes [Pattern.bookDTO.book_name,Pattern.book_name,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [bookDTO.book_name,book_name]; arguments []; default message [book_name],[Ljavax.validation.constraints.Pattern$Flag;@14352cdc,^[A-Z]{1}[a-zA-Z\s]{2,}$]; default message [Book name validation failed..!]] ]
+2022-02-07 09:53.09.26 [WARN] [http-nio-8080-exec-6] [o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver:208] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.bridgelabz.bookstore.dto.ResponseDTO> com.bridgelabz.bookstore.controllers.BookController.insert(com.bridgelabz.bookstore.dto.BookDTO): [Field error in object 'bookDTO' on field 'quantity': rejected value [101]; codes [Max.bookDTO.quantity,Max.quantity,Max]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [bookDTO.quantity,quantity]; arguments []; default message [quantity],100]; default message [Quantity must be less than 100...!]] ]
+2022-02-07 09:53.21.908 [INFO] [http-nio-8080-exec-9] [c.b.b.c.BookController:45] Book DTO :- com.bridgelabz.bookstore.dto.BookDTO@46c8eab8
+2022-02-07 09:56.06.136 [INFO] [Thread-15] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:56.06.160 [INFO] [Thread-15] [c.z.h.HikariDataSource:350] HikariPool-4 - Shutdown initiated...
+2022-02-07 09:56.06.224 [INFO] [Thread-15] [c.z.h.HikariDataSource:352] HikariPool-4 - Shutdown completed.
+2022-02-07 09:56.06.572 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:56.06.573 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:56.06.574 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:56.09.46 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:56.09.116 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:56.09.901 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:56.09.903 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:56.09.903 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:56.10.30 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:56.10.31 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 3367 ms
+2022-02-07 09:56.10.605 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-5 - Starting...
+2022-02-07 09:56.10.665 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-5 - Start completed.
+2022-02-07 09:56.11.490 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:56.12.12 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:56.12.349 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:56.12.367 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:56.12.399 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 6.01 seconds (JVM running for 442.978)
+2022-02-07 09:56.12.429 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:56.12.431 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:56.12.431 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:56.13.817 [INFO] [Thread-19] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:56.13.818 [INFO] [Thread-19] [c.z.h.HikariDataSource:350] HikariPool-5 - Shutdown initiated...
+2022-02-07 09:56.13.826 [INFO] [Thread-19] [c.z.h.HikariDataSource:352] HikariPool-5 - Shutdown completed.
+2022-02-07 09:56.13.969 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:56.13.969 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:56.13.969 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:56.14.801 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:56.14.852 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:56.15.135 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:56.15.137 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:56.15.137 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:56.15.195 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:56.15.195 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1218 ms
+2022-02-07 09:56.15.319 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-6 - Starting...
+2022-02-07 09:56.15.374 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-6 - Start completed.
+2022-02-07 09:56.15.559 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:56.16.52 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:56.16.363 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:56.16.380 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:56.16.391 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 2.482 seconds (JVM running for 446.97)
+2022-02-07 09:56.16.393 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:56.16.394 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:56.16.395 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:58.44.582 [INFO] [Thread-23] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:58.44.585 [INFO] [Thread-23] [c.z.h.HikariDataSource:350] HikariPool-6 - Shutdown initiated...
+2022-02-07 09:58.44.626 [INFO] [Thread-23] [c.z.h.HikariDataSource:352] HikariPool-6 - Shutdown completed.
+2022-02-07 09:58.45.96 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:58.45.97 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:58.45.98 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:58.47.994 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:58.48.60 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:58.48.369 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:58.48.375 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:58.48.376 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:58.48.462 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:58.48.463 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 3356 ms
+2022-02-07 09:58.48.608 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-7 - Starting...
+2022-02-07 09:58.48.664 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-7 - Start completed.
+2022-02-07 09:58.49.441 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:58.50.200 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:58.50.411 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:58.50.423 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:58.50.433 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 5.599 seconds (JVM running for 601.012)
+2022-02-07 09:58.50.435 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:58.50.437 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:58.50.437 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:59.00.57 [INFO] [Thread-27] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.00.58 [INFO] [Thread-27] [c.z.h.HikariDataSource:350] HikariPool-7 - Shutdown initiated...
+2022-02-07 09:59.00.162 [INFO] [Thread-27] [c.z.h.HikariDataSource:352] HikariPool-7 - Shutdown completed.
+2022-02-07 09:59.01.245 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:59.01.246 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:59.01.246 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:59.02.537 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:59.02.576 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:59.02.999 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:59.03.04 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:59.03.04 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:59.03.88 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:59.03.89 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1812 ms
+2022-02-07 09:59.03.214 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-8 - Starting...
+2022-02-07 09:59.03.274 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-8 - Start completed.
+2022-02-07 09:59.04.27 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.04.510 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:59.04.704 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:59.04.719 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:59.04.727 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 4.024 seconds (JVM running for 615.306)
+2022-02-07 09:59.04.731 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:59.04.732 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:59.04.732 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:59.32.768 [INFO] [Thread-31] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.32.770 [INFO] [Thread-31] [c.z.h.HikariDataSource:350] HikariPool-8 - Shutdown initiated...
+2022-02-07 09:59.32.839 [INFO] [Thread-31] [c.z.h.HikariDataSource:352] HikariPool-8 - Shutdown completed.
+2022-02-07 09:59.33.362 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:59.33.363 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:59.33.363 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:59.34.501 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:59.34.611 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:59.34.944 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:59.34.946 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:59.34.946 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:59.35.82 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:59.35.82 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1712 ms
+2022-02-07 09:59.36.193 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-9 - Starting...
+2022-02-07 09:59.36.313 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-9 - Start completed.
+2022-02-07 09:59.36.445 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.36.745 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:59.36.934 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:59.36.951 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:59.36.956 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 3.888 seconds (JVM running for 647.534)
+2022-02-07 09:59.36.959 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:59.36.960 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:59.36.961 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 09:59.47.321 [INFO] [Thread-35] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.47.323 [INFO] [Thread-35] [c.z.h.HikariDataSource:350] HikariPool-9 - Shutdown initiated...
+2022-02-07 09:59.47.352 [INFO] [Thread-35] [c.z.h.HikariDataSource:352] HikariPool-9 - Shutdown completed.
+2022-02-07 09:59.47.804 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 09:59.47.806 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 09:59.47.811 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 09:59.48.830 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 09:59.48.881 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
+2022-02-07 09:59.49.183 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 09:59.49.185 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 09:59.49.186 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 09:59.49.263 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 09:59.49.264 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1442 ms
+2022-02-07 09:59.49.389 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-10 - Starting...
+2022-02-07 09:59.49.448 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-10 - Start completed.
+2022-02-07 09:59.49.701 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 09:59.49.946 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 09:59.50.177 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 09:59.50.192 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 09:59.50.199 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 2.59 seconds (JVM running for 660.778)
+2022-02-07 09:59.50.204 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 09:59.50.205 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 09:59.50.206 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:02.16.357 [INFO] [http-nio-8080-exec-2] [o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-07 10:03.18.357 [INFO] [Thread-39] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:03.18.361 [INFO] [Thread-39] [c.z.h.HikariDataSource:350] HikariPool-10 - Shutdown initiated...
+2022-02-07 10:03.18.426 [INFO] [Thread-39] [c.z.h.HikariDataSource:352] HikariPool-10 - Shutdown completed.
+2022-02-07 10:03.18.821 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:03.18.823 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:03.18.825 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:03.19.851 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:03.19.931 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:03.20.268 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:03.20.272 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:03.20.272 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:03.20.410 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:03.20.410 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1576 ms
+2022-02-07 10:03.20.529 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-11 - Starting...
+2022-02-07 10:03.20.590 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-11 - Start completed.
+2022-02-07 10:03.21.74 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:03.21.264 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:03.21.497 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:03.21.511 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:03.21.529 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 2.892 seconds (JVM running for 872.108)
+2022-02-07 10:03.21.531 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 10:03.21.533 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:03.21.536 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:05.01.309 [INFO] [Thread-43] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.01.315 [INFO] [Thread-43] [c.z.h.HikariDataSource:350] HikariPool-11 - Shutdown initiated...
+2022-02-07 10:05.01.380 [INFO] [Thread-43] [c.z.h.HikariDataSource:352] HikariPool-11 - Shutdown completed.
+2022-02-07 10:05.01.953 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:05.01.955 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:05.01.956 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:05.03.401 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:05.03.477 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:05.03.866 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:05.03.872 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:05.03.873 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:05.03.983 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:05.03.984 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 2007 ms
+2022-02-07 10:05.04.146 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-12 - Starting...
+2022-02-07 10:05.04.220 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-12 - Start completed.
+2022-02-07 10:05.04.848 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.05.49 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:05.05.281 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:05.05.296 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:05.05.302 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 3.653 seconds (JVM running for 975.881)
+2022-02-07 10:05.05.308 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 10:05.05.311 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:05.05.312 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:05.05.898 [INFO] [http-nio-8080-exec-2] [o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-07 10:05.20.865 [INFO] [Thread-47] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.20.867 [INFO] [Thread-47] [c.z.h.HikariDataSource:350] HikariPool-12 - Shutdown initiated...
+2022-02-07 10:05.20.915 [INFO] [Thread-47] [c.z.h.HikariDataSource:352] HikariPool-12 - Shutdown completed.
+2022-02-07 10:05.21.713 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:05.21.714 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:05.21.714 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:05.23.150 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:05.23.198 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:05.23.514 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:05.23.515 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:05.23.516 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:05.23.638 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:05.23.662 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 1915 ms
+2022-02-07 10:05.23.800 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-13 - Starting...
+2022-02-07 10:05.23.848 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-13 - Start completed.
+2022-02-07 10:05.25.603 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.26.336 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:05.26.999 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:05.27.68 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:05.27.73 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 5.748 seconds (JVM running for 997.652)
+2022-02-07 10:05.27.82 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 10:05.27.83 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:05.27.89 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:05.28.566 [INFO] [Thread-51] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.28.567 [INFO] [Thread-51] [c.z.h.HikariDataSource:350] HikariPool-13 - Shutdown initiated...
+2022-02-07 10:05.28.593 [INFO] [Thread-51] [c.z.h.HikariDataSource:352] HikariPool-13 - Shutdown completed.
+2022-02-07 10:05.28.824 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 50464 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:05.28.825 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:05.28.825 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:05.29.232 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:05.29.257 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:05.29.409 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:05.29.410 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:05.29.411 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:05.29.458 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:05.29.458 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 629 ms
+2022-02-07 10:05.29.521 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-14 - Starting...
+2022-02-07 10:05.29.558 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-14 - Start completed.
+2022-02-07 10:05.29.634 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:05.29.961 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:05.30.107 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:05.30.117 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:05.30.123 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 1.387 seconds (JVM running for 1000.702)
+2022-02-07 10:05.30.125 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-02-07 10:05.30.126 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:05.30.126 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:05.42.553 [INFO] [http-nio-8080-exec-1] [o.a.c.c.C.[.[.[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-07 10:07.57.399 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 3740 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:07.57.408 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:07.57.409 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:07.57.821 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-07 10:07.57.825 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-07 10:08.02.409 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:08.02.605 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 167 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:08.06.472 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:08.06.501 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:08.06.502 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:08.07.134 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:08.07.135 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 9306 ms
+2022-02-07 10:08.09.532 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-02-07 10:08.10.443 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-02-07 10:08.13.706 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:08.16.985 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:08.20.627 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:08.20.940 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:08.21.86 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 25.505 seconds (JVM running for 28.096)
+2022-02-07 10:08.21.101 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:08.21.103 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:08.35.471 [INFO] [restartedMain] [c.b.b.BookStoreApplication:55] Starting BookStoreApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 57456 (C:\Users\VICKY\Desktop\BookStoreCFP\BookStore\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\BookStore)
+2022-02-07 10:08.35.474 [DEBUG] [restartedMain] [c.b.b.BookStoreApplication:56] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 10:08.35.475 [INFO] [restartedMain] [c.b.b.BookStoreApplication:641] The following profiles are active: PROD
+2022-02-07 10:08.35.768 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-07 10:08.35.776 [INFO] [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-07 10:08.39.202 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-07 10:08.39.363 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 134 ms. Found 1 JPA repository interfaces.
+2022-02-07 10:08.41.241 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8080 (http)
+2022-02-07 10:08.41.269 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-02-07 10:08.41.270 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-07 10:08.41.569 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-02-07 10:08.41.570 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 5791 ms
+2022-02-07 10:08.43.169 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-1 - Starting...
+2022-02-07 10:08.44.122 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-02-07 10:08.46.825 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:08.48.08 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-07 10:08.50.474 [INFO] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:58] LiveReload server is running on port 35729
+2022-02-07 10:08.50.667 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-07 10:08.50.768 [INFO] [restartedMain] [c.b.b.BookStoreApplication:61] Started BookStoreApplication in 17.358 seconds (JVM running for 20.835)
+2022-02-07 10:08.50.799 [INFO] [restartedMain] [c.b.b.BookStoreApplication:15] Book Store Started in PROD Environment...!
+2022-02-07 10:08.50.800 [INFO] [restartedMain] [c.b.b.BookStoreApplication:16] Book Store DataBase User Is cfpbookstoreuser.
+2022-02-07 10:08.57.434 [INFO] [Thread-5] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-07 10:08.57.476 [INFO] [Thread-5] [c.z.h.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-02-07 10:08.57.599 [INFO] [Thread-5] [c.z.h.HikariDataSource:352] HikariPool-1 - Shutdown completed.
