@@ -7,10 +7,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,10 +48,10 @@ public class OrderController {
 	}
 	
 	/*** Cancel order. ***/
-	@DeleteMapping(value = "/cancel/{order_id}")
+	@PutMapping(value = "/cancel/{order_id}")
 	public ResponseEntity<ResponseDTO> cancel(@PathVariable Long order_id) {
-		String cancelMessage = orderService.cancelOrder(order_id);
-		ResponseDTO responseDTO = new ResponseDTO("Order cancelled successfully..!", cancelMessage);
+		Order canceledOrderData = orderService.cancelOrder(order_id);
+		ResponseDTO responseDTO = new ResponseDTO("Order cancelled successfully..!", canceledOrderData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	

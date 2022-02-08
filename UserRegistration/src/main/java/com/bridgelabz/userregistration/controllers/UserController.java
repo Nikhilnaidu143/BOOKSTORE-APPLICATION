@@ -151,4 +151,12 @@ public class UserController {
 		ResponseDTO responseDTO = new ResponseDTO("Expiry Warning sent...!", getMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
+	
+	/*** Purchasing suscription for specific user. ***/
+	@PutMapping(value = "/purchase")
+	public ResponseEntity<ResponseDTO> purchase(@RequestParam(value = "token") String token) {
+		User userData = userService.purchaseSubscription(token);
+		ResponseDTO responseDTO = new ResponseDTO("Purchased Successfully...!", userData , token);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
 }

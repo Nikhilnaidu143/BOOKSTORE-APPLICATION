@@ -44,7 +44,7 @@ public @Data class Order {
 		this.address = orderDTO.address;
 		this.user_id = orderDTO.user_id;
 		this.book_id = orderDTO.book_id;
-		this.cancel = orderDTO.cancel;
+		this.cancel = false;
 	}
 	
 	/*** Parameterized constructor(Constructor Overloading). ***/
@@ -56,7 +56,7 @@ public @Data class Order {
 		this.address = orderDTO.address;
 		this.user_id = orderDTO.user_id;
 		this.book_id = orderDTO.book_id;
-		this.cancel = orderDTO.cancel;
+		this.cancel = false;
 	}
 	
 }

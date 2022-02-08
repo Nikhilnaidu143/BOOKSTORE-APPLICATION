@@ -33,4 +33,6 @@ public interface IUserService {
 	public String forgetPasswordLink(String email);
 
 	public String sendEmailIfSubscriptionNearToExpiry();
+
+	public User purchaseSubscription(String token);
 }

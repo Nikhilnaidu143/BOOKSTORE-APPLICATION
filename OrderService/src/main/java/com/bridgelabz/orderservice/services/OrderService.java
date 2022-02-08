@@ -34,21 +34,21 @@ public class OrderService implements IOrderService {
 
 	/*** Cancel order. ***/
 	@Override
-	public String cancelOrder(Long order_id) {
+	public Order cancelOrder(Long order_id) {
 		Optional<Order> orderDataById = orderRepository.findById(order_id);
 		if(!orderDataById.isPresent()) {
 			throw new OrderException(ID_NOT_FOUND);
 		}
 		else {
-			orderRepository.deleteById(order_id);
-			return "Order details deleted from the database...!";
+			orderDataById.get().setCancel(true);
+			return orderRepository.save(orderDataById.get());
 		}
 	}
 
 	/*** Get all orders. ***/
 	@Override
 	public List<Order> getAllOrdersData() {
-		return orderRepository.findAll();
+		return orderRepository.findOrdersWhereCancelFalse();
 	}
 
 	/*** Get order details for specific user. ***/

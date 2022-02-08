@@ -12,7 +12,7 @@ public interface IOrderService {
 
 	public Order placeOrder(OrderDTO order);
 
-	public String cancelOrder(Long order_id);
+	public Order cancelOrder(Long order_id);
 
 	public List<Order> getAllOrdersData();
 

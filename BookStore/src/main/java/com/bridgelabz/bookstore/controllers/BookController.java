@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.bookstore.dto.BookDTO;
@@ -81,16 +82,16 @@ public class BookController {
 	}
 	
 	/*** Change quantity by using ID. ***/
-	@PutMapping(value = "quantity/{id}/{new_quantity}")
-	public ResponseEntity<ResponseDTO> changeQuantity(@PathVariable Long id , @PathVariable int new_quantity) {
+	@PutMapping(value = "quantity/{id}")
+	public ResponseEntity<ResponseDTO> changeQuantity(@PathVariable Long id , @RequestParam(value = "new_quantity") int new_quantity) {
 		Book bookData = bookService.changeQuantityById(id , new_quantity);
 		ResponseDTO responseDTO = new ResponseDTO("Quantity changed successfully..!", bookData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
 	/*** Change price by using ID. ***/
-	@PutMapping(value = "price/{id}/{new_price}")
-	public ResponseEntity<ResponseDTO> changePrice(@PathVariable Long id , @PathVariable String new_price) {
+	@PutMapping(value = "price/{id}")
+	public ResponseEntity<ResponseDTO> changePrice(@PathVariable Long id , @RequestParam(value = "new_price") String new_price) {
 		Book bookData = bookService.changePriceById(id , new_price);
 		ResponseDTO responseDTO = new ResponseDTO("Price changed successfully..!", bookData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);

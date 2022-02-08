@@ -1,5 +1,6 @@
 package com.bridgelabz.userregistration.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
@@ -28,8 +29,8 @@ public class UserService implements IUserService {
 	private static final String PASSWORD_NOTVALID = "Password Validation failed..!";
 
 	/*** Constant password and email Regex patterns. ****/
-	private static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$";
-	private static final String EMAIL_REGEX = "^[\\w+-]+(\\.[\\w+-]+)*@[\\w]+(\\.[\\w]+)?(?=(\\.[A-Za-z_]{2,3}$|\\.[a-zA-Z]{2,3}$)).*$";
+	public static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*[0-9])(?=[\\w]*[\\W][\\w]*$)(?=.*[a-z]).{8,}$";
+	public static final String EMAIL_REGEX = "^[\\w+-]+(\\.[\\w+-]+)*@[\\w]+(\\.[\\w]+)?(?=(\\.[A-Za-z_]{2,3}$|\\.[a-zA-Z]{2,3}$)).*$";
 
 	/*** Autowired annotation is used for automatic dependency injection. ***/
 	@Autowired
@@ -217,7 +218,7 @@ public class UserService implements IUserService {
 	/*** Sending OTP. ***/
 	@Override
 	public String sendOtp(String token) {
-		int otp = (int) Math.floor(Math.random() * 1000000 + 100000);
+		int otp = (int) Math.floor(Math.random() * 900000 + 100000);
 
 		Long id = tokenUtil.decodeToken(token);
 		Optional<User> userById = userRepository.findById(id);
@@ -230,6 +231,8 @@ public class UserService implements IUserService {
 							+ mailService.getOtpLink(token, otp));
 
 			mailService.send(email);
+			userById.get().setOtp(otp);
+			userRepository.save(userById.get());
 			return "Check your email to verify with otp...!";
 		}
 	}
@@ -264,6 +267,27 @@ public class UserService implements IUserService {
 				mailService.send(email);
 			}
 			return "Emails sent to users whose expiry is in 30 days.";
+		}
+	}
+
+	/*** Purchasing subscription and setting Expiry date. ***/
+	@Override
+	public User purchaseSubscription(String token) {
+		Long userId = tokenUtil.decodeToken(token);
+		Optional<User> userByTokenId = userRepository.findById(userId);
+		if (!userByTokenId.get().isVerify()) {
+			throw new UserException(NON_VERIFIED_USER);
+		} else {
+			if (!userByTokenId.isPresent()) {
+				throw new UserException(ID_NOT_FOUND);
+			} else {
+				LocalDate purchaseDate = LocalDate.now();
+				LocalDate expiryDate = purchaseDate.plusYears(1);
+				
+				userByTokenId.get().setPurchase_date(purchaseDate);
+				userByTokenId.get().setExpiry_date(expiryDate);
+				return userRepository.save(userByTokenId.get());
+			}
 		}
 	}
 

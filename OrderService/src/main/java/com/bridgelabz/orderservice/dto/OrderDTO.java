@@ -35,6 +35,4 @@ public @ToString class OrderDTO {
 
 	public long book_id;
 
-	public boolean cancel;
-	
 }

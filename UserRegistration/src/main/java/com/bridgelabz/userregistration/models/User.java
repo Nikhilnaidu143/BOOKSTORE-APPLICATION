@@ -57,9 +57,9 @@ public @Data class User {
 		this.password = userDTO.password;
 		this.email = userDTO.email;
 		this.verify = false;
-		this.otp = userDTO.otp;
-		this.purchase_date = userDTO.purchase_date;
-		this.expiry_date = userDTO.expiry_date;
+		this.otp = 0;
+		this.purchase_date = null;
+		this.expiry_date = null;
 	}
 	
 	/*** Parameterized Constructor.(Constructor Overloading.) ***/
@@ -74,8 +74,8 @@ public @Data class User {
 		this.password = userDTO.password;
 		this.email = userDTO.email;
 		this.verify = false;
-		this.otp = userDTO.otp;
-		this.purchase_date = userDTO.purchase_date;
-		this.expiry_date = userDTO.expiry_date;
+		this.otp = 0;
+		this.purchase_date = null;
+		this.expiry_date = null;
 	}
 }
