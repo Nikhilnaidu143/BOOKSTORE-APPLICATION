@@ -25,4 +25,12 @@ public interface IUserService {
 	public User userLogin(String email, String password);
 
 	public User setNewPassword(String token, String newPassword);
+
+	public String sendOtp(String token);
+
+	public User verifyOtp(String token, int otp, int enter_otp);
+
+	public String forgetPasswordLink(String email);
+
+	public String sendEmailIfSubscriptionNearToExpiry();
 }

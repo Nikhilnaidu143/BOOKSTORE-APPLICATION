@@ -97,7 +97,7 @@ public class UserController {
 	}
 	
 	/*** User Verification ***/
-	@GetMapping(value = "verify/{token}")
+	@GetMapping(value = "/verify/{token}")
 	public ResponseEntity<ResponseDTO> verifyUser(@PathVariable String token) {
 		User userData = userService.userVerification(token);
 		ResponseDTO responseDTO = new ResponseDTO("Verification for user successfull..!", userData, token);
@@ -105,17 +105,50 @@ public class UserController {
 	}
 
 	/*** User login ***/
-	@GetMapping(value = "login/{email}/{password}")
+	@GetMapping(value = "/login/{email}/{password}")
 	public ResponseEntity<ResponseDTO> login(@PathVariable String email , @PathVariable String password) {
 		User userData = userService.userLogin(email , password);
 		ResponseDTO responseDTO = new ResponseDTO("Login successfull..!", userData, tokenUtil.createToken(userData.getId()));
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
-	@PutMapping(value = "newPassword/{newPassword}")
-	public ResponseEntity<ResponseDTO> newPassword(@PathVariable String newPassword , @RequestParam(value = "token") String token) {
+	/*** Forget Password. ***/
+	@GetMapping(value = "/forgetPassword")
+	public ResponseEntity<ResponseDTO> forgetPassword(@RequestParam(value = "email") String email) {
+		String getMessage = userService.forgetPasswordLink(email);
+		ResponseDTO responseDTO = new ResponseDTO("Rest PassWord sent to email successfully..!", getMessage);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
+	
+	/*** changing password. ***/
+	@GetMapping(value = "/resetPassword/{token}/{newPassword}")
+	public ResponseEntity<ResponseDTO> newPassword(@PathVariable String token , @PathVariable String newPassword) {
 		User userData = userService.setNewPassword(token , newPassword);
 		ResponseDTO responseDTO = new ResponseDTO("PassWord has been changed successfully..!", userData, token);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
+	
+	/*** Sending otp. ***/
+	@GetMapping(value = "/sendOTP")
+	public ResponseEntity<ResponseDTO> sendOTP(@RequestParam(value = "token") String token) {
+		String getMessage = userService.sendOtp(token);
+		ResponseDTO responseDTO = new ResponseDTO("OTP send successfully..!", getMessage, token);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
+	
+	/*** Verifying otp. ***/
+	@GetMapping(value = "/verifyOTP/{token}/{otp}")
+	public ResponseEntity<ResponseDTO> verifyOTP(@PathVariable String token , @PathVariable int otp ,  @RequestParam(value = "enter_otp") int enter_otp) {
+		User userData = userService.verifyOtp(token , otp , enter_otp);
+		ResponseDTO responseDTO = new ResponseDTO("OTP verified successfully..!", userData, token);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+	}
+	
+	/*** Sending warning to email if Expiry date is near. ***/
+	@GetMapping(value = "/expiry")
+	public ResponseEntity<ResponseDTO> expiryEmail() {
+		String getMessage = userService.sendEmailIfSubscriptionNearToExpiry();
+		ResponseDTO responseDTO = new ResponseDTO("Expiry Warning sent...!", getMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 }

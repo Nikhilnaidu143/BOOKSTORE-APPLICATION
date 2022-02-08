@@ -8,4 +8,8 @@ public interface IMailService {
 	public void send(Email email);
 
 	public String getLink(String token);
+
+	public String getOtpLink(String token, int Otp);
+
+	public String getLinkForResetPassword(String createToken);
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.bridgelabz.userregistration.dto.UserDTO;
 import com.bridgelabz.userregistration.exceptions.customexception.UserException;
+import com.bridgelabz.userregistration.models.Email;
 import com.bridgelabz.userregistration.models.User;
 import com.bridgelabz.userregistration.repository.UserRepository;
 import com.bridgelabz.userregistration.utility.TokenUtil;
@@ -36,6 +37,9 @@ public class UserService implements IUserService {
 
 	@Autowired
 	private TokenUtil tokenUtil;
+
+	@Autowired
+	private IMailService mailService;
 
 	/*** Simple hello message to check. ***/
 	@Override
@@ -170,7 +174,24 @@ public class UserService implements IUserService {
 		}
 	}
 
-	/*** Setting new password. ***/
+	/*** Sending resetPassword link to email. ***/
+	@Override
+	public String forgetPasswordLink(String email) {
+		List<User> user = userRepository.findUserByEmail(email);
+
+		if (user.size() < 1) {
+			throw new UserException(USER_NOT_FOUND);
+		} else {
+			Email sendEmail = new Email(email, "nnikhil976@gmail.com", "Reset Password",
+					"Hello " + user.get(0).getFirst_name() + " " + user.get(0).getLast_name()
+							+ ", Your Reset Password link ===> "
+							+ mailService.getLinkForResetPassword(tokenUtil.createToken(user.get(0).getId())));
+			mailService.send(sendEmail);
+			return "Check your mail for reset password link...!";
+		}
+	}
+
+	/*** Resetting Setting new password. ***/
 	@Override
 	public User setNewPassword(String token, String newPassword) {
 		Long tokenId = tokenUtil.decodeToken(token);
@@ -190,6 +211,59 @@ public class UserService implements IUserService {
 					return userRepository.save(user);
 				}
 			}
+		}
+	}
+
+	/*** Sending OTP. ***/
+	@Override
+	public String sendOtp(String token) {
+		int otp = (int) Math.floor(Math.random() * 1000000 + 100000);
+
+		Long id = tokenUtil.decodeToken(token);
+		Optional<User> userById = userRepository.findById(id);
+
+		if (!userById.isPresent()) {
+			throw new UserException(ID_NOT_FOUND);
+		} else {
+			Email email = new Email(userById.get().getEmail(), "nnikhil976@gmail.com", "Otp Verification",
+					"Hello " + userById.get().getFirst_name() + userById.get().getLast_name() + " =====> "
+							+ mailService.getOtpLink(token, otp));
+
+			mailService.send(email);
+			return "Check your email to verify with otp...!";
+		}
+	}
+
+	/**** verifying otp. ****/
+	@Override
+	public User verifyOtp(String token, int otp, int enter_otp) {
+		Long id = tokenUtil.decodeToken(token);
+		Optional<User> findById = userRepository.findById(id);
+		if (!findById.isPresent()) {
+			throw new UserException(ID_NOT_FOUND);
+		} else if (otp == enter_otp) {
+			findById.get().setVerify(true);
+			return userRepository.save(findById.get());
+		} else {
+			throw new UserException("Otp not matched...!");
+		}
+	}
+
+	/*** Sending warning mail if Expiry date is near. ***/
+	@Override
+	public String sendEmailIfSubscriptionNearToExpiry() {
+		List<User> users = userRepository.findUserByExpiryIn30Days();
+
+		if (users.size() < 1) {
+			throw new UserException("No expiry near for users...!");
+		} else {
+			for (User user : users) {
+				Email email = new Email(user.getEmail(), "nnikhil976@gmail.com", "EXPIRY NEAR",
+						"Hello " + user.getFirst_name() + " " + user.getLast_name()
+								+ " ,Your subscription is about to expire. Please renew your subscription.");
+				mailService.send(email);
+			}
+			return "Emails sent to users whose expiry is in 30 days.";
 		}
 	}
 
