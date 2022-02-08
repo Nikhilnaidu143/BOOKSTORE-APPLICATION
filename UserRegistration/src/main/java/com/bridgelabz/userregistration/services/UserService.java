@@ -72,18 +72,26 @@ public class UserService implements IUserService {
 	public User updateUserDetails(UserDTO user, String id, String token) {
 		Long tokenId = tokenUtil.decodeToken(token);
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-
-		if (!userByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		Optional<User> findUserById = userRepository.findById(Long.parseLong(id));
+		if (!findUserById.isPresent()) {
+			log.error(ID_NOT_FOUND);
+			throw new UserException(ID_NOT_FOUND);
 		} else {
-			Optional<User> findUserById = userRepository.findById(Long.parseLong(id));
-			if (!findUserById.isPresent()) {
-				log.error(ID_NOT_FOUND);
-				throw new UserException(ID_NOT_FOUND);
+			if (!userByTokenId.get().isVerify()) {
+				throw new UserException(NON_VERIFIED_USER);
 			} else {
 				User userData = new User(Long.parseLong(id), user);
-				if (findUserById.get().isVerify()) {
+				if(findUserById.get().isVerify()) {
 					userData.setVerify(true);
+				}
+				if(findUserById.get().getOtp() != 0) {
+					userData.setOtp(findUserById.get().getOtp());
+				}
+				if(findUserById.get().getPurchase_date() != null) {
+					userData.setPurchase_date(findUserById.get().getPurchase_date());
+				}
+				if(findUserById.get().getExpiry_date() != null) {
+					userData.setExpiry_date(findUserById.get().getExpiry_date());
 				}
 				return userRepository.save(userData);
 			}
@@ -95,11 +103,11 @@ public class UserService implements IUserService {
 	public List<User> readAllUsersData(String token) {
 		Long id = tokenUtil.decodeToken(token);
 		Optional<User> findUserByTokenId = userRepository.findById(id);
-		if (!findUserByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		if (!findUserByTokenId.isPresent()) {
+			throw new UserException(TOKEN_INVALID);
 		} else {
-			if (!findUserByTokenId.isPresent()) {
-				throw new UserException(TOKEN_INVALID);
+			if (!findUserByTokenId.get().isVerify()) {
+				throw new UserException(NON_VERIFIED_USER);
 			} else {
 				return userRepository.findAll();
 			}
@@ -111,13 +119,14 @@ public class UserService implements IUserService {
 	public User readUserById(String id, String token) {
 		Long tokenId = tokenUtil.decodeToken(token); // decoding token and getting id.
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-		if (!userByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		if (!userByTokenId.isPresent()) {
+			throw new UserException(ID_NOT_FOUND);
 		} else {
-			if (userByTokenId.isPresent()) {
-				return userRepository.findById(Long.parseLong(id)).orElseThrow(() -> new UserException(ID_NOT_FOUND));
+			if (!userByTokenId.get().isVerify()) {
+				throw new UserException(NON_VERIFIED_USER);
 			} else {
-				return null;
+				Optional<User> user = userRepository.findById(Long.parseLong(id));
+				return user.get();
 			}
 		}
 	}
@@ -127,15 +136,15 @@ public class UserService implements IUserService {
 	public String deleteUserById(String id, String token) {
 		Long tokenId = tokenUtil.decodeToken(token);
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-		if (!userByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		Optional<User> findUserById = userRepository.findById(Long.parseLong(id));
+		if (findUserById.isPresent()) {
+			throw new UserException(ID_NOT_FOUND);
 		} else {
-			Optional<User> findEmployeeById = userRepository.findById(Long.parseLong(id));
-			if (findEmployeeById.isPresent()) {
+			if (!userByTokenId.get().isVerify()) {
 				userRepository.deleteById(Long.parseLong(id));
 				return "Deleted user details successfully";
 			} else {
-				return USER_NOT_FOUND;
+				return NON_VERIFIED_USER;
 			}
 		}
 	}
@@ -197,11 +206,11 @@ public class UserService implements IUserService {
 	public User setNewPassword(String token, String newPassword) {
 		Long tokenId = tokenUtil.decodeToken(token);
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-		if (!userByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		if (!userByTokenId.isPresent()) {
+			throw new UserException(USER_NOT_FOUND);
 		} else {
-			if (!userByTokenId.isPresent()) {
-				throw new UserException(USER_NOT_FOUND);
+			if (!userByTokenId.get().isVerify()) {
+				throw new UserException(NON_VERIFIED_USER);
 			} else {
 				User user = userByTokenId.get();
 				boolean pattern = Pattern.compile(PASSWORD_REGEX).matcher(newPassword).matches();
@@ -275,15 +284,15 @@ public class UserService implements IUserService {
 	public User purchaseSubscription(String token) {
 		Long userId = tokenUtil.decodeToken(token);
 		Optional<User> userByTokenId = userRepository.findById(userId);
-		if (!userByTokenId.get().isVerify()) {
-			throw new UserException(NON_VERIFIED_USER);
+		if (!userByTokenId.isPresent()) {
+			throw new UserException(ID_NOT_FOUND);
 		} else {
-			if (!userByTokenId.isPresent()) {
-				throw new UserException(ID_NOT_FOUND);
+			if (!userByTokenId.get().isVerify()) {
+				throw new UserException(NON_VERIFIED_USER);
 			} else {
 				LocalDate purchaseDate = LocalDate.now();
 				LocalDate expiryDate = purchaseDate.plusYears(1);
-				
+
 				userByTokenId.get().setPurchase_date(purchaseDate);
 				userByTokenId.get().setExpiry_date(expiryDate);
 				return userRepository.save(userByTokenId.get());
