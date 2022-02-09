@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @ControllerAdvice
 @Slf4j
 public class UserRegistrationExceptionHandler {
-	
+
 	private static final String ERROR_MESSAGE = "Exception while procession REST request.";
 
 	/*** Handling Validation failed exception. ***/
@@ -33,7 +33,7 @@ public class UserRegistrationExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, errorMssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling incorrect date format exception. ***/
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public ResponseEntity<ResponseDTO> handleHttpMessageNotReadableException(
@@ -42,18 +42,18 @@ public class UserRegistrationExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, "Date should be in (yyyy-MM-dd) this format...!");
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling id not found exception. ***/
 	@ExceptionHandler(UserException.class)
 	public ResponseEntity<ResponseDTO> handleUserException(UserException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling exception when token is not valid. ***/
 	@ExceptionHandler(SignatureVerificationException.class)
 	public ResponseEntity<ResponseDTO> handleSignatureVerificationException(SignatureVerificationException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, exception.getMessage());
-		return new ResponseEntity<ResponseDTO>(responseDTO , HttpStatus.UNAUTHORIZED);
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.UNAUTHORIZED);
 	}
 }

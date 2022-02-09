@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/cart")
 @Slf4j
 public class CartController {
-	
+
 	@Autowired // AutoWired annotation is used for automatic dependency injection.
 	private ICartService cartService;
 
@@ -40,7 +40,6 @@ public class CartController {
 		ResponseDTO responseDTO = new ResponseDTO("Get Call successfull.", mssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
 
 	/*** Add to cart ***/
 	@PostMapping(value = "/add")
@@ -50,7 +49,7 @@ public class CartController {
 		ResponseDTO responseDTO = new ResponseDTO("Added to cart successfully..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 	/*** Delete Book details by using ID. ***/
 	@DeleteMapping(value = "/remove/{cart_id}")
 	public ResponseEntity<ResponseDTO> delete(@PathVariable Long cart_id) {
@@ -58,15 +57,16 @@ public class CartController {
 		ResponseDTO responseDTO = new ResponseDTO("Delete Call for Cart successfull..!", deletedMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 	/*** Update quantity. ***/
 	@PutMapping(value = "update/{cart_id}")
-	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id , @RequestParam(value = "quantity") int quantity , @RequestHeader(name = "token") String token) {
-		Cart cartData = cartService.updateQuantity(cart_id , quantity , token);
+	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id,
+			@RequestParam(value = "quantity") int quantity, @RequestHeader(name = "token") String token) {
+		Cart cartData = cartService.updateQuantity(cart_id, quantity, token);
 		ResponseDTO responseDTO = new ResponseDTO("Update Call for quantity successfull..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 	/*** Get All cart items. ***/
 	@GetMapping(value = "getAll")
 	public ResponseEntity<ResponseDTO> getALL() {
@@ -74,13 +74,13 @@ public class CartController {
 		ResponseDTO responseDTO = new ResponseDTO("Get All Call for Cart items successfull..!", AllcartItems);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 	/*** Get Cart by id. ***/
 	@GetMapping(value = "get/{cart_id}")
-	public ResponseEntity<ResponseDTO> get(@PathVariable Long cart_id , @RequestHeader(name = "token") String token) {
-		Cart cartData = cartService.getCartById(cart_id , token);
+	public ResponseEntity<ResponseDTO> get(@PathVariable Long cart_id, @RequestHeader(name = "token") String token) {
+		Cart cartData = cartService.getCartById(cart_id, token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for Cart successfull..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 }

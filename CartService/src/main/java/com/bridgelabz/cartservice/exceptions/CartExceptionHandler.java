@@ -15,10 +15,10 @@ import com.bridgelabz.cartservice.exceptions.customexceptions.CartException;
 
 @ControllerAdvice
 public class CartExceptionHandler {
-	
+
 	/*** Constant error message. ***/
 	private static final String MESSAGE = "Exception while procession REST request.";
-	
+
 	/*** Handling validation failed exceptions. ***/
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ResponseDTO> handleMethodArgumentNotValidException(
@@ -29,12 +29,12 @@ public class CartExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, errorMssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling custom exceptions. ***/
 	@ExceptionHandler(CartException.class)
 	public ResponseEntity<ResponseDTO> handleCartException(CartException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 }

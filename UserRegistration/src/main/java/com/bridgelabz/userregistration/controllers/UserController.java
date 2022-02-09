@@ -127,8 +127,7 @@ public class UserController {
 
 	/*** changing password. ***/
 	@GetMapping(value = "/resetPassword/{token}/{newPassword}")
-	public ResponseEntity<ResponseDTO> newPassword(@PathVariable String token,
-			@PathVariable String newPassword) {
+	public ResponseEntity<ResponseDTO> newPassword(@PathVariable String token, @PathVariable String newPassword) {
 		User userData = userService.setNewPassword(token, newPassword);
 		ResponseDTO responseDTO = new ResponseDTO("PassWord has been changed successfully..!", userData, token);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);

@@ -6,14 +6,14 @@ import com.bridgelabz.bookstore.dto.BookDTO;
 import com.bridgelabz.bookstore.models.Book;
 
 public interface IBookService {
-	
+
 	/*** Declaring methods. ***/
 	public String helloMessage(String token);
-	
-	public Book insertBook(BookDTO book); 
+
+	public Book insertBook(BookDTO book);
 
 	public Book updateBookDetails(BookDTO book, Long id, String token);
-	
+
 	public List<Book> readAllBookDetails(String token);
 
 	public Book readBookDetailsById(Long id, String token);
@@ -29,5 +29,5 @@ public interface IBookService {
 	public List<Book> sortByPriceDescending(String token);
 
 	public List<Book> searchByBookName(String book_name, String token);
-	
+
 }

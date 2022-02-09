@@ -19,5 +19,5 @@ public interface ICartService {
 	public List<Cart> getAllCartItems();
 
 	public Cart getCartById(Long cart_id, String token);
-	
+
 }

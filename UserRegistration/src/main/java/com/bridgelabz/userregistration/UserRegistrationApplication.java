@@ -19,5 +19,5 @@ public class UserRegistrationApplication {
 		log.info("User registration DataBase User Is {}.",
 				context.getEnvironment().getProperty("spring.datasource.username"));
 	}
-	
+
 }

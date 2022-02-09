@@ -17,23 +17,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "order_details")
 public @Data class Order {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private LocalDate order_date;
-	
+
 	private double price;
-	
+
 	private int quantity;
-	
+
 	private String address;
-	
+
 	private long user_id;
-	
+
 	private long book_id;
-	
+
 	private boolean cancel;
 
 	/*** Parameterized constructor. ***/
@@ -46,9 +46,9 @@ public @Data class Order {
 		this.book_id = orderDTO.book_id;
 		this.cancel = false;
 	}
-	
+
 	/*** Parameterized constructor(Constructor Overloading). ***/
-	public Order(Long id , OrderDTO orderDTO) {
+	public Order(Long id, OrderDTO orderDTO) {
 		this.id = id;
 		this.order_date = orderDTO.order_date;
 		this.price = orderDTO.price;
@@ -58,5 +58,5 @@ public @Data class Order {
 		this.book_id = orderDTO.book_id;
 		this.cancel = false;
 	}
-	
+
 }

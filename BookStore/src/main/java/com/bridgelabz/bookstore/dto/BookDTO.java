@@ -24,11 +24,11 @@ public class BookDTO {
 	public String logo;
 
 	@NotNull(message = "Price cannot be null...!")
-	@Min(value = 100 , message = BookService.PRICE_NOT_VALID)
+	@Min(value = 100, message = BookService.PRICE_NOT_VALID)
 	public double price;
 
 	@NotNull(message = "Quantity cannot be null...!")
-	@Max(value = 100 , message = BookService.QUANTITY_NOT_VALID)
+	@Max(value = 100, message = BookService.QUANTITY_NOT_VALID)
 	public int quantity;
 
 }

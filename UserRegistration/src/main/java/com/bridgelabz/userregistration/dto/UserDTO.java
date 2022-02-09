@@ -42,10 +42,10 @@ public @ToString class UserDTO {
 	public LocalDate updated_date;
 
 	@NotNull(message = "Password cannot be null...!")
-	@Pattern(regexp = UserService.PASSWORD_REGEX , message = "Password validation failed..!")
+	@Pattern(regexp = UserService.PASSWORD_REGEX, message = "Password validation failed..!")
 	public String password;
 
 	@NotNull(message = "Email cannot be null...!")
-	@Email(regexp = UserService.EMAIL_REGEX , message = "Email validation failed..!")
+	@Email(regexp = UserService.EMAIL_REGEX, message = "Email validation failed..!")
 	public String email;
 }

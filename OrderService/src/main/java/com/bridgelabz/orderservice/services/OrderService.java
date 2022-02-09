@@ -16,10 +16,10 @@ public class OrderService implements IOrderService {
 
 	/** Constant custom exception message. **/
 	private static final String ID_NOT_FOUND = "OOPS! ID not found in the database...!";
-	
+
 	@Autowired
 	private OrderRepository orderRepository;
-	
+
 	/*** Simple hello message. ***/
 	@Override
 	public String helloMessage(String token) {
@@ -28,18 +28,17 @@ public class OrderService implements IOrderService {
 
 	/*** Placing order. ***/
 	@Override
-	public Order placeOrder(OrderDTO order , String token) {
+	public Order placeOrder(OrderDTO order, String token) {
 		return orderRepository.save(new Order(order));
 	}
 
 	/*** Cancel order. ***/
 	@Override
-	public Order cancelOrder(Long order_id , String token) {
+	public Order cancelOrder(Long order_id, String token) {
 		Optional<Order> orderDataById = orderRepository.findById(order_id);
-		if(!orderDataById.isPresent()) {
+		if (!orderDataById.isPresent()) {
 			throw new OrderException(ID_NOT_FOUND);
-		}
-		else {
+		} else {
 			orderDataById.get().setCancel(true);
 			return orderRepository.save(orderDataById.get());
 		}
@@ -53,7 +52,7 @@ public class OrderService implements IOrderService {
 
 	/*** Get order details for specific user. ***/
 	@Override
-	public Order getOrdersForSpecificUser(Long id , String token) {
+	public Order getOrdersForSpecificUser(Long id, String token) {
 		return orderRepository.findById(id).orElseThrow(() -> new OrderException(ID_NOT_FOUND));
 	}
 

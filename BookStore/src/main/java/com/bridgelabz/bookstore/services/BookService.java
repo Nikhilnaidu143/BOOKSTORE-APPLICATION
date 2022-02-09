@@ -19,7 +19,7 @@ public class BookService implements IBookService {
 
 	/*** Constant custom exception variables. ***/
 	private static final String ID_NOT_FOUND = "OOPS! ID not found in the database...!";
-	
+
 	public static final String QUANTITY_NOT_VALID = "Quantity must be less than 100...!";
 	public static final String PRICE_NOT_VALID = "Price must be greater than 100...!";
 
@@ -40,7 +40,7 @@ public class BookService implements IBookService {
 
 	/*** updating book details by id ***/
 	@Override
-	public Book updateBookDetails(BookDTO book, Long id , String token) {
+	public Book updateBookDetails(BookDTO book, Long id, String token) {
 		Optional<Book> bookById = bookRepository.findById(id);
 		if (!bookById.isPresent()) {
 			log.error(ID_NOT_FOUND);
@@ -58,7 +58,7 @@ public class BookService implements IBookService {
 
 	/*** Reading book details by ID. ***/
 	@Override
-	public Book readBookDetailsById(Long id , String token) {
+	public Book readBookDetailsById(Long id, String token) {
 		Optional<Book> bookById = bookRepository.findById(id);
 		if (!bookById.isPresent()) {
 			throw new BookException(ID_NOT_FOUND);
@@ -69,7 +69,7 @@ public class BookService implements IBookService {
 
 	/*** Delete book details by id. ***/
 	@Override
-	public String deleteBookDetailsById(Long id , String token) {
+	public String deleteBookDetailsById(Long id, String token) {
 		Optional<Book> bookById = bookRepository.findById(id);
 		if (bookById.isPresent()) {
 			bookRepository.deleteById(id);
@@ -81,12 +81,12 @@ public class BookService implements IBookService {
 
 	/*** Changing quantity. ***/
 	@Override
-	public Book changeQuantityById(Long id, int new_quantity , String token) {
+	public Book changeQuantityById(Long id, int new_quantity, String token) {
 		Optional<Book> bookById = bookRepository.findById(id);
 		if (!bookById.isPresent()) {
 			throw new BookException(ID_NOT_FOUND);
 		} else {
-			if(new_quantity > 100) {
+			if (new_quantity > 100) {
 				throw new BookException(QUANTITY_NOT_VALID);
 			}
 			Book book = bookById.get();
@@ -97,12 +97,12 @@ public class BookService implements IBookService {
 
 	/*** Changing price. ***/
 	@Override
-	public Book changePriceById(Long id, String new_price , String token) {
+	public Book changePriceById(Long id, String new_price, String token) {
 		Optional<Book> bookById = bookRepository.findById(id);
 		if (!bookById.isPresent()) {
 			throw new BookException(ID_NOT_FOUND);
 		} else {
-			if(Double.parseDouble(new_price) < 100) {
+			if (Double.parseDouble(new_price) < 100) {
 				throw new BookException(PRICE_NOT_VALID);
 			}
 			Book book = bookById.get();
@@ -125,7 +125,7 @@ public class BookService implements IBookService {
 
 	/*** Search books by using book name. ***/
 	@Override
-	public List<Book> searchByBookName(String bookName , String token) {
+	public List<Book> searchByBookName(String bookName, String token) {
 		return bookRepository.findByBookNameContaining(bookName);
 	}
 

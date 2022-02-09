@@ -50,7 +50,7 @@ public class CartService implements ICartService {
 
 	/*** Update quantity. ***/
 	@Override
-	public Cart updateQuantity(Long cart_id, int quantity , String token) {
+	public Cart updateQuantity(Long cart_id, int quantity, String token) {
 		Optional<Cart> cartById = cartRepository.findById(cart_id);
 
 		if (!cartById.isPresent()) {
@@ -73,7 +73,7 @@ public class CartService implements ICartService {
 
 	/*** Get cart items by id. ***/
 	@Override
-	public Cart getCartById(Long cart_id , String token) {
+	public Cart getCartById(Long cart_id, String token) {
 		return cartRepository.findById(cart_id).orElseThrow(() -> new CartException(ID_NOT_FOUND));
 	}
 

@@ -44,7 +44,7 @@ public class OrderController {
 	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody OrderDTO order,
 			@RequestHeader(name = "token") String token) {
 		log.info("Order DTO :- " + order.toString()); // logging.
-		Order orderData = orderService.placeOrder(order , token);
+		Order orderData = orderService.placeOrder(order, token);
 		ResponseDTO responseDTO = new ResponseDTO("Order placed successfully..!", orderData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

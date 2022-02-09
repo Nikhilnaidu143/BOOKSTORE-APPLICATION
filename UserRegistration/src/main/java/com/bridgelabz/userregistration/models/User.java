@@ -17,35 +17,35 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "user_details")
 public @Data class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
 	private String first_name;
-	
+
 	private String last_name;
-	
+
 	private String kyc;
-	
+
 	private LocalDate dob;
-	
+
 	private LocalDate registered_date;
-	
+
 	private LocalDate updated_date;
-	
+
 	private String password;
-	
+
 	private String email;
-	
+
 	private boolean verify;
-	
+
 	private int otp;
-	
+
 	private LocalDate purchase_date;
-	
+
 	private LocalDate expiry_date;
-	
+
 	/*** Parameterized Constructor. ***/
 	public User(UserDTO userDTO) {
 		this.first_name = userDTO.first_name;
@@ -61,9 +61,9 @@ public @Data class User {
 		this.purchase_date = null;
 		this.expiry_date = null;
 	}
-	
+
 	/*** Parameterized Constructor.(Constructor Overloading.) ***/
-	public User(long id , UserDTO userDTO) {
+	public User(long id, UserDTO userDTO) {
 		this.id = id;
 		this.first_name = userDTO.first_name;
 		this.last_name = userDTO.last_name;

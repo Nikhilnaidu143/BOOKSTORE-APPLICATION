@@ -14,7 +14,7 @@ public @ToString class CartDTO {
 	public Long book_id;
 
 	@NotNull(message = "Quantity cannot be null...!")
-	@Max(value = 100 , message = "Quantity must be less than or equal to 100..!")
+	@Max(value = 100, message = "Quantity must be less than or equal to 100..!")
 	public int quantity;
 
 }

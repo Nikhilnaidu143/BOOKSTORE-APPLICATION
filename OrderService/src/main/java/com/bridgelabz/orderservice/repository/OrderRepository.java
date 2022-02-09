@@ -9,8 +9,8 @@ import com.bridgelabz.orderservice.models.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-	//get list of orders which are not cancelled.
-	@Query(value = "SELECT * FROM order_details WHERE cancel = false" ,  nativeQuery = true)
+	// get list of orders which are not cancelled.
+	@Query(value = "SELECT * FROM order_details WHERE cancel = false", nativeQuery = true)
 	List<Order> findOrdersWhereCancelFalse();
 
 }

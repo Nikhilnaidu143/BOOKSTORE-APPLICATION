@@ -15,10 +15,10 @@ import com.bridgelabz.bookstore.exceptions.customexceptions.BookException;
 
 @ControllerAdvice
 public class BookExceptionHandler {
-	
+
 	/*** Constant error message. ***/
 	private static final String MESSAGE = "Exception while procession REST request.";
-	
+
 	/*** Handling validation failed exceptions. ***/
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ResponseDTO> handleMethodArgumentNotValidException(
@@ -29,7 +29,7 @@ public class BookExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, errorMssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling custom exceptions. ***/
 	@ExceptionHandler(BookException.class)
 	public ResponseEntity<ResponseDTO> handleBookException(BookException exception) {

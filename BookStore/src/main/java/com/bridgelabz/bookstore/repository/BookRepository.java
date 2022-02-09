@@ -18,7 +18,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	List<Book> sortHighToLowByPrice();
 
 	/***
-	 * Search books with bookName (Matches with the book names which conatins 
+	 * Search books with bookName (Matches with the book names which conatins
 	 * entered characters i.e, no to enter full book name).
 	 ***/
 	List<Book> findByBookNameContaining(String bookName);

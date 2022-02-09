@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @ControllerAdvice
 @Slf4j
 public class OrderExceptionhandler {
-	
+
 	/*** Constant error message. ***/
 	private static final String MESSAGE = "Exception while procession REST request.";
 
@@ -33,7 +33,7 @@ public class OrderExceptionhandler {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, errorMssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling invalid date format exception. ***/
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public ResponseEntity<ResponseDTO> handleHttpMessageNotReadableException(
@@ -42,12 +42,12 @@ public class OrderExceptionhandler {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, "Date should be in (yyyy-MM-dd) this format...!");
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	/*** Handling custom exceptions. ***/
 	@ExceptionHandler(OrderException.class)
 	public ResponseEntity<ResponseDTO> handleOrderException(OrderException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
 	}
-	
+
 }

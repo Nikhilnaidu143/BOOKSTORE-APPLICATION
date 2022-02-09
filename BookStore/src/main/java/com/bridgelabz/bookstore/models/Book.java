@@ -16,24 +16,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "book_details")
 public @Data class Book {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@Column(name = "book_name")
 	private String bookName;
-	
+
 	private String author;
-	
+
 	private String description;
-	
+
 	private String logo;
-	
+
 	private double price;
 
 	private int quantity;
-	
+
 	/*** Parameterized constructor. ***/
 	public Book(BookDTO bookDTO) {
 		this.bookName = bookDTO.bookName;
@@ -43,9 +43,9 @@ public @Data class Book {
 		this.price = bookDTO.price;
 		this.quantity = bookDTO.quantity;
 	}
-	
+
 	/*** Parameterized constructor(Constructor Overloading). ***/
-	public Book(long id , BookDTO bookDTO) {
+	public Book(long id, BookDTO bookDTO) {
 		this.id = id;
 		this.bookName = bookDTO.bookName;
 		this.author = bookDTO.author;

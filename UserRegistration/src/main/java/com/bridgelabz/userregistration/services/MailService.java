@@ -64,15 +64,14 @@ public class MailService implements IMailService {
 	public String getLink(String token) {
 		return "http://localhost:8081/user/verify/" + token;
 	}
-	
-	//link to send for otp verification.
+
+	// link to send for otp verification.
 	@Override
-	public String getOtpLink(String token , int otp) {
-		return "http://localhost:8081/user/verifyOTP/" + token + "/" + otp + 
-				"                OTP = " + otp;
+	public String getOtpLink(String token, int otp) {
+		return "http://localhost:8081/user/verifyOTP/" + token + "/" + otp + "                OTP = " + otp;
 	}
 
-	//link to send for reset password.
+	// link to send for reset password.
 	@Override
 	public String getLinkForResetPassword(String createToken) {
 		return "http://localhost:8081/user/resetPassword/" + createToken + "/";
