@@ -22,19 +22,19 @@ public class OrderService implements IOrderService {
 	
 	/*** Simple hello message. ***/
 	@Override
-	public String helloMessage() {
+	public String helloMessage(String token) {
 		return "Hello Nikhil...!";
 	}
 
 	/*** Placing order. ***/
 	@Override
-	public Order placeOrder(OrderDTO order) {
+	public Order placeOrder(OrderDTO order , String token) {
 		return orderRepository.save(new Order(order));
 	}
 
 	/*** Cancel order. ***/
 	@Override
-	public Order cancelOrder(Long order_id) {
+	public Order cancelOrder(Long order_id , String token) {
 		Optional<Order> orderDataById = orderRepository.findById(order_id);
 		if(!orderDataById.isPresent()) {
 			throw new OrderException(ID_NOT_FOUND);
@@ -47,13 +47,13 @@ public class OrderService implements IOrderService {
 
 	/*** Get all orders. ***/
 	@Override
-	public List<Order> getAllOrdersData() {
+	public List<Order> getAllOrdersData(String token) {
 		return orderRepository.findOrdersWhereCancelFalse();
 	}
 
 	/*** Get order details for specific user. ***/
 	@Override
-	public Order getOrdersForSpecificUser(Long id) {
+	public Order getOrdersForSpecificUser(Long id , String token) {
 		return orderRepository.findById(id).orElseThrow(() -> new OrderException(ID_NOT_FOUND));
 	}
 

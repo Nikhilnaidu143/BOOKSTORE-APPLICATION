@@ -1,5 +1,6 @@
 package com.bridgelabz.bookstore.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,8 @@ public @Data class Book {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String book_name;
+	@Column(name = "book_name")
+	private String bookName;
 	
 	private String author;
 	
@@ -34,7 +36,7 @@ public @Data class Book {
 	
 	/*** Parameterized constructor. ***/
 	public Book(BookDTO bookDTO) {
-		this.book_name = bookDTO.book_name;
+		this.bookName = bookDTO.bookName;
 		this.author = bookDTO.author;
 		this.description = bookDTO.description;
 		this.logo = bookDTO.logo;
@@ -45,7 +47,7 @@ public @Data class Book {
 	/*** Parameterized constructor(Constructor Overloading). ***/
 	public Book(long id , BookDTO bookDTO) {
 		this.id = id;
-		this.book_name = bookDTO.book_name;
+		this.bookName = bookDTO.bookName;
 		this.author = bookDTO.author;
 		this.description = bookDTO.description;
 		this.logo = bookDTO.logo;

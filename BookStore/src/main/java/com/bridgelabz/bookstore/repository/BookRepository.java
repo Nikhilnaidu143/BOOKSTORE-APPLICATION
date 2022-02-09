@@ -16,8 +16,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	/*** Sorting from high to low by price. ***/
 	@Query(value = "SELECT * FROM book_details ORDER BY price DESC", nativeQuery = true)
 	List<Book> sortHighToLowByPrice();
-	
-	@Query(value = "SELECT * FROM book_details WHERE book_name = :book_name", nativeQuery = true)
-	List<Book> searchByBookName(String book_name);
 
+	/***
+	 * Search books with bookName (Matches with the book names which conatins 
+	 * entered characters i.e, no to enter full book name).
+	 ***/
+	List<Book> findByBookNameContaining(String bookName);
 }

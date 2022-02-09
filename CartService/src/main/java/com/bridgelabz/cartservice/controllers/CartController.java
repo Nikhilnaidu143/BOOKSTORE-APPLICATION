@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.cartservice.dto.CartDTO;
@@ -33,8 +35,8 @@ public class CartController {
 
 	/*** Simple hello message for checking. ***/
 	@GetMapping(value = { "", "/", "/home" })
-	public ResponseEntity<ResponseDTO> sayHello() {
-		String mssg = cartService.helloMessage();
+	public ResponseEntity<ResponseDTO> sayHello(@RequestHeader(name = "token") String token) {
+		String mssg = cartService.helloMessage(token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call successfull.", mssg);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
@@ -42,41 +44,41 @@ public class CartController {
 
 	/*** Add to cart ***/
 	@PostMapping(value = "/add")
-	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody CartDTO cart) {
+	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody CartDTO cart , @RequestHeader(name = "token") String token) {
 		log.info("Cart DTO :- " + cart.toString()); // logging.
-		Cart cartData = cartService.addToCart(cart);
+		Cart cartData = cartService.addToCart(cart , token);
 		ResponseDTO responseDTO = new ResponseDTO("Added to cart successfully..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
 	/*** Delete Book details by using ID. ***/
 	@DeleteMapping(value = "/delete/{cart_id}")
-	public ResponseEntity<ResponseDTO> delete(@PathVariable Long cart_id) {
-		String deletedMessage = cartService.deleteCartDetailsId(cart_id);
+	public ResponseEntity<ResponseDTO> delete(@PathVariable Long cart_id , @RequestHeader(name = "token") String token) {
+		String deletedMessage = cartService.deleteCartDetailsId(cart_id , token);
 		ResponseDTO responseDTO = new ResponseDTO("Delete Call for Cart successfull..!", deletedMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
 	/*** Update quantity. ***/
-	@PutMapping(value = "update/{cart_id}/{quantity}")
-	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id , @PathVariable int quantity) {
-		Cart cartData = cartService.updateQuantity(cart_id , quantity);
+	@PutMapping(value = "update/{cart_id}")
+	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id , @RequestParam(value = "quantity") int quantity , @RequestHeader(name = "token") String token) {
+		Cart cartData = cartService.updateQuantity(cart_id , quantity , token);
 		ResponseDTO responseDTO = new ResponseDTO("Update Call for quantity successfull..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
 	/*** Get All cart items. ***/
 	@GetMapping(value = "getAll")
-	public ResponseEntity<ResponseDTO> getALL() {
-		List<Cart> AllcartItems = cartService.getAllCartItems();
+	public ResponseEntity<ResponseDTO> getALL(@RequestHeader(name = "token") String token) {
+		List<Cart> AllcartItems = cartService.getAllCartItems(token);
 		ResponseDTO responseDTO = new ResponseDTO("Get All Call for Cart items successfull..!", AllcartItems);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 	
 	/*** Get Cart by id. ***/
 	@GetMapping(value = "get/{cart_id}")
-	public ResponseEntity<ResponseDTO> get(@PathVariable Long cart_id) {
-		Cart cartData = cartService.getCartById(cart_id);
+	public ResponseEntity<ResponseDTO> get(@PathVariable Long cart_id , @RequestHeader(name = "token") String token) {
+		Cart cartData = cartService.getCartById(cart_id , token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for Cart successfull..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

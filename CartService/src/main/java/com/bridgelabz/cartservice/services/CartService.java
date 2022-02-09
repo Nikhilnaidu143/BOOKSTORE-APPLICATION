@@ -26,19 +26,19 @@ public class CartService implements ICartService {
 
 	/*** Simple hello message. ***/
 	@Override
-	public String helloMessage() {
+	public String helloMessage(String token) {
 		return "Hello Nikhil...!";
 	}
 
 	/*** Added to cart. ***/
 	@Override
-	public Cart addToCart(CartDTO cart) {
+	public Cart addToCart(CartDTO cart , String token) {
 		return cartRepository.save(new Cart(cart));
 	}
 
 	/*** Delete cart details from the database. ***/
 	@Override
-	public String deleteCartDetailsId(Long cart_id) {
+	public String deleteCartDetailsId(Long cart_id , String token) {
 		Optional<Cart> cartDataById = cartRepository.findById(cart_id);
 		if (!cartDataById.isPresent()) {
 			throw new CartException(ID_NOT_FOUND);
@@ -50,7 +50,7 @@ public class CartService implements ICartService {
 
 	/*** Update quantity. ***/
 	@Override
-	public Cart updateQuantity(Long cart_id, int quantity) {
+	public Cart updateQuantity(Long cart_id, int quantity , String token) {
 		Optional<Cart> cartById = cartRepository.findById(cart_id);
 
 		if (!cartById.isPresent()) {
@@ -67,13 +67,13 @@ public class CartService implements ICartService {
 
 	/*** Get all cart items. ***/
 	@Override
-	public List<Cart> getAllCartItems() {
+	public List<Cart> getAllCartItems(String token) {
 		return cartRepository.findAll();
 	}
 
 	/*** Get cart items by id. ***/
 	@Override
-	public Cart getCartById(Long cart_id) {
+	public Cart getCartById(Long cart_id , String token) {
 		return cartRepository.findById(cart_id).orElseThrow(() -> new CartException(ID_NOT_FOUND));
 	}
 

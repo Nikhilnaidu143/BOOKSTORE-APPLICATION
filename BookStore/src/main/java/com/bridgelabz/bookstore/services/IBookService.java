@@ -8,26 +8,26 @@ import com.bridgelabz.bookstore.models.Book;
 public interface IBookService {
 	
 	/*** Declaring methods. ***/
-	public String helloMessage();
+	public String helloMessage(String token);
 	
-	public Book insertBook(BookDTO book); 
+	public Book insertBook(BookDTO book, String token); 
 
-	public Book updateBookDetails(BookDTO book, Long id);
+	public Book updateBookDetails(BookDTO book, Long id, String token);
 	
-	public List<Book> readAllBookDetails();
+	public List<Book> readAllBookDetails(String token);
 
-	public Book readBookDetailsById(Long id);
+	public Book readBookDetailsById(Long id, String token);
 
-	public String deleteBookDetailsById(Long id);
+	public String deleteBookDetailsById(Long id, String token);
 
-	public Book changeQuantityById(Long id, int new_quantity);
+	public Book changeQuantityById(Long id, int new_quantity, String token);
 
-	public Book changePriceById(Long id, String new_price);
+	public Book changePriceById(Long id, String new_price, String token);
 
-	public List<Book> sortByPriceAscending();
+	public List<Book> sortByPriceAscending(String token);
 
-	public List<Book> sortByPriceDescending();
+	public List<Book> sortByPriceDescending(String token);
 
-	public List<Book> searchByBookName(String book_name);
+	public List<Book> searchByBookName(String book_name, String token);
 	
 }

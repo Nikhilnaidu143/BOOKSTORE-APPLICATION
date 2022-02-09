@@ -8,14 +8,14 @@ import com.bridgelabz.orderservice.models.Order;
 public interface IOrderService {
 
 	/*** Declaring methods. ***/
-	public String helloMessage();
+	public String helloMessage(String token);
 
-	public Order placeOrder(OrderDTO order);
+	public Order placeOrder(OrderDTO order, String token);
 
-	public Order cancelOrder(Long order_id);
+	public Order cancelOrder(Long order_id, String token);
 
-	public List<Order> getAllOrdersData();
+	public List<Order> getAllOrdersData(String token);
 
-	public Order getOrdersForSpecificUser(Long id);
+	public Order getOrdersForSpecificUser(Long id, String token);
 
 }

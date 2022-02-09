@@ -119,15 +119,10 @@ public class UserService implements IUserService {
 	public User readUserById(String id, String token) {
 		Long tokenId = tokenUtil.decodeToken(token); // decoding token and getting id.
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-		if (!userByTokenId.isPresent()) {
-			throw new UserException(ID_NOT_FOUND);
+		if (!userByTokenId.get().isVerify()) {
+			throw new UserException(NON_VERIFIED_USER);
 		} else {
-			if (!userByTokenId.get().isVerify()) {
-				throw new UserException(NON_VERIFIED_USER);
-			} else {
-				Optional<User> user = userRepository.findById(Long.parseLong(id));
-				return user.get();
-			}
+			return userRepository.findById(Long.parseLong(id)).orElseThrow(() -> new UserException(ID_NOT_FOUND));
 		}
 	}
 
@@ -136,15 +131,15 @@ public class UserService implements IUserService {
 	public String deleteUserById(String id, String token) {
 		Long tokenId = tokenUtil.decodeToken(token);
 		Optional<User> userByTokenId = userRepository.findById(tokenId);
-		Optional<User> findUserById = userRepository.findById(Long.parseLong(id));
-		if (findUserById.isPresent()) {
-			throw new UserException(ID_NOT_FOUND);
+		if (!userByTokenId.get().isVerify()) {
+			throw new UserException(NON_VERIFIED_USER);
 		} else {
-			if (!userByTokenId.get().isVerify()) {
+			Optional<User> findEmployeeById = userRepository.findById(Long.parseLong(id));
+			if (findEmployeeById.isPresent()) {
 				userRepository.deleteById(Long.parseLong(id));
 				return "Deleted user details successfully";
 			} else {
-				return NON_VERIFIED_USER;
+				return USER_NOT_FOUND;
 			}
 		}
 	}
