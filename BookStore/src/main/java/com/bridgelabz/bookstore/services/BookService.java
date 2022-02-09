@@ -34,7 +34,7 @@ public class BookService implements IBookService {
 
 	/*** adding book details in the database. ***/
 	@Override
-	public Book insertBook(BookDTO book , String token) {
+	public Book insertBook(BookDTO book) {
 		return bookRepository.save(new Book(book));
 	}
 

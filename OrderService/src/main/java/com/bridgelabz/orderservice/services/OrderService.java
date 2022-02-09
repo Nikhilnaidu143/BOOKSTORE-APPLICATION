@@ -47,7 +47,7 @@ public class OrderService implements IOrderService {
 
 	/*** Get all orders. ***/
 	@Override
-	public List<Order> getAllOrdersData(String token) {
+	public List<Order> getAllOrdersData() {
 		return orderRepository.findOrdersWhereCancelFalse();
 	}
 

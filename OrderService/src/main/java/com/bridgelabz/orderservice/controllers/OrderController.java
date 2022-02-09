@@ -51,24 +51,25 @@ public class OrderController {
 
 	/*** Cancel order. ***/
 	@PutMapping(value = "/cancel/{order_id}")
-	public ResponseEntity<ResponseDTO> cancel(@PathVariable Long order_id , @RequestHeader(name = "token") String token) {
-		Order canceledOrderData = orderService.cancelOrder(order_id , token);
+	public ResponseEntity<ResponseDTO> cancel(@PathVariable Long order_id,
+			@RequestHeader(name = "token") String token) {
+		Order canceledOrderData = orderService.cancelOrder(order_id, token);
 		ResponseDTO responseDTO = new ResponseDTO("Order cancelled successfully..!", canceledOrderData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	/*** Get all orders. ***/
 	@GetMapping(value = "getAll")
-	public ResponseEntity<ResponseDTO> getAll(@RequestHeader(name = "token") String token) {
-		List<Order> ordersData = orderService.getAllOrdersData(token);
+	public ResponseEntity<ResponseDTO> getAll() {
+		List<Order> ordersData = orderService.getAllOrdersData();
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for all orders successfull..!", ordersData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	/*** Get order details for specific user. ***/
 	@GetMapping(value = "get/{id}")
-	public ResponseEntity<ResponseDTO> get(@PathVariable Long id , @RequestHeader(name = "token") String token) {
-		Order orderData = orderService.getOrdersForSpecificUser(id , token);
+	public ResponseEntity<ResponseDTO> get(@PathVariable Long id, @RequestHeader(name = "token") String token) {
+		Order orderData = orderService.getOrdersForSpecificUser(id, token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for specific user successfull..!", orderData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

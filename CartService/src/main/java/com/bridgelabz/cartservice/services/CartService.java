@@ -32,13 +32,13 @@ public class CartService implements ICartService {
 
 	/*** Added to cart. ***/
 	@Override
-	public Cart addToCart(CartDTO cart , String token) {
+	public Cart addToCart(CartDTO cart) {
 		return cartRepository.save(new Cart(cart));
 	}
 
 	/*** Delete cart details from the database. ***/
 	@Override
-	public String deleteCartDetailsId(Long cart_id , String token) {
+	public String deleteCartDetailsId(Long cart_id) {
 		Optional<Cart> cartDataById = cartRepository.findById(cart_id);
 		if (!cartDataById.isPresent()) {
 			throw new CartException(ID_NOT_FOUND);
@@ -67,7 +67,7 @@ public class CartService implements ICartService {
 
 	/*** Get all cart items. ***/
 	@Override
-	public List<Cart> getAllCartItems(String token) {
+	public List<Cart> getAllCartItems() {
 		return cartRepository.findAll();
 	}
 
