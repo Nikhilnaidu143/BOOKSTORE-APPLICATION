@@ -59,17 +59,17 @@ public class OrderController {
 	}
 
 	/*** Get all orders. ***/
-	@GetMapping(value = "getAll")
-	public ResponseEntity<ResponseDTO> getAll() {
-		List<Order> ordersData = orderService.getAllOrdersData();
+	@GetMapping(value = "/getAll")
+	public ResponseEntity<ResponseDTO> getAll(@RequestHeader(name = "token") String token) {
+		List<Order> ordersData = orderService.getAllOrdersData(token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for all orders successfull..!", ordersData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
-	/*** Get order details for specific user. ***/
-	@GetMapping(value = "get/{id}")
-	public ResponseEntity<ResponseDTO> get(@PathVariable Long id, @RequestHeader(name = "token") String token) {
-		Order orderData = orderService.getOrdersForSpecificUser(id, token);
+	/*** Get all order details for specific user. ***/
+	@GetMapping(value = "/get")
+	public ResponseEntity<ResponseDTO> get(@RequestHeader(name = "token") String token) {
+		List<Order> orderData = orderService.getAllOrdersForSpecificUser(token);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for specific user successfull..!", orderData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

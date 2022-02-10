@@ -81,16 +81,16 @@ public class UserService implements IUserService {
 				throw new UserException(NON_VERIFIED_USER);
 			} else {
 				User userData = new User(Long.parseLong(id), user);
-				if(findUserById.get().isVerify()) {
+				if (findUserById.get().isVerify()) {
 					userData.setVerify(true);
 				}
-				if(findUserById.get().getOtp() != 0) {
+				if (findUserById.get().getOtp() != 0) {
 					userData.setOtp(findUserById.get().getOtp());
 				}
-				if(findUserById.get().getPurchase_date() != null) {
+				if (findUserById.get().getPurchase_date() != null) {
 					userData.setPurchase_date(findUserById.get().getPurchase_date());
 				}
-				if(findUserById.get().getExpiry_date() != null) {
+				if (findUserById.get().getExpiry_date() != null) {
 					userData.setExpiry_date(findUserById.get().getExpiry_date());
 				}
 				return userRepository.save(userData);
@@ -293,6 +293,15 @@ public class UserService implements IUserService {
 				return userRepository.save(userByTokenId.get());
 			}
 		}
+	}
+
+	/*** Check if user is present or not in the database. ***/
+	@Override
+	public boolean checkIfUserIsPresentOrNot(String token) {
+		Long tokenId = tokenUtil.decodeToken(token);
+		Optional<User> user = userRepository.findById(tokenId);
+
+		return (user.isPresent()) ? true : false; //used ternary operator.
 	}
 
 }

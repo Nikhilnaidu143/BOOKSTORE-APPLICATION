@@ -1,6 +1,7 @@
 package com.bridgelabz.userregistration.exceptions;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
@@ -56,4 +57,12 @@ public class UserRegistrationExceptionHandler {
 		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.UNAUTHORIZED);
 	}
+
+	/*** Handling exception if token is not present. ***/
+	@ExceptionHandler(NoSuchElementException.class)
+	public ResponseEntity<ResponseDTO> handleNoSuchElementException(NoSuchElementException exception) {
+		ResponseDTO responseDTO = new ResponseDTO(ERROR_MESSAGE, exception.getMessage());
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+	}
+
 }

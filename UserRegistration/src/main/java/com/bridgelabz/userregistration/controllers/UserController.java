@@ -158,11 +158,24 @@ public class UserController {
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
-	/*** Purchasing suscription for specific user. ***/
+	/*** Purchasing subscription for specific user. ***/
 	@PutMapping(value = "/purchase")
 	public ResponseEntity<ResponseDTO> purchase(@RequestHeader(name = "token") String token) {
 		User userData = userService.purchaseSubscription(token);
 		ResponseDTO responseDTO = new ResponseDTO("Purchased Successfully...!", userData, token);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
+	
+	/*** Checking user is present or not in the database by using token. ***/
+	@GetMapping(value = "/checkuser/{token}")
+	public boolean checkUser(@PathVariable String token) {
+		return userService.checkIfUserIsPresentOrNot(token);
+	}
+	
+	/*** Decoding the token and returns id. ***/
+	@GetMapping(value = "/decode/{token}")
+	public Long decodingToken(@PathVariable String token) {
+		return tokenUtil.decodeToken(token);
+	}
+	
 }

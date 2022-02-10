@@ -35,4 +35,6 @@ public interface IUserService {
 	public String sendEmailIfSubscriptionNearToExpiry();
 
 	public User purchaseSubscription(String token);
+
+	public boolean checkIfUserIsPresentOrNot(String token);
 }

@@ -42,19 +42,7 @@ public @Data class Order {
 		this.price = orderDTO.price;
 		this.quantity = orderDTO.quantity;
 		this.address = orderDTO.address;
-		this.user_id = orderDTO.user_id;
-		this.book_id = orderDTO.book_id;
-		this.cancel = false;
-	}
-
-	/*** Parameterized constructor(Constructor Overloading). ***/
-	public Order(Long id, OrderDTO orderDTO) {
-		this.id = id;
-		this.order_date = orderDTO.order_date;
-		this.price = orderDTO.price;
-		this.quantity = orderDTO.quantity;
-		this.address = orderDTO.address;
-		this.user_id = orderDTO.user_id;
+		this.user_id = 0;
 		this.book_id = orderDTO.book_id;
 		this.cancel = false;
 	}

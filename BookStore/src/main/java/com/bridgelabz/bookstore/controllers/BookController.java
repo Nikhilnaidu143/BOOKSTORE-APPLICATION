@@ -43,9 +43,9 @@ public class BookController {
 
 	/*** Adding book details in the database. ***/
 	@PostMapping(value = "/add")
-	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody BookDTO book) {
+	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody BookDTO book , @RequestHeader(name = "token") String token) {
 		log.info("Book DTO :- " + book.toString()); // logging.
-		Book bookData = bookService.insertBook(book);
+		Book bookData = bookService.insertBook(book , token);
 		ResponseDTO responseDTO = new ResponseDTO("Post Call for Book successfull..!", bookData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}

@@ -10,6 +10,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 
 import com.bridgelabz.orderservice.dto.ResponseDTO;
 import com.bridgelabz.orderservice.exceptions.customexception.OrderException;
@@ -48,6 +49,13 @@ public class OrderExceptionhandler {
 	public ResponseEntity<ResponseDTO> handleOrderException(OrderException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+	}
+	
+	/*** Handling invalid token exception. ***/
+	@ExceptionHandler(HttpClientErrorException.class)
+	public ResponseEntity<ResponseDTO> handleHttpClientErrorException(HttpClientErrorException exception) {
+		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.UNAUTHORIZED);
 	}
 
 }

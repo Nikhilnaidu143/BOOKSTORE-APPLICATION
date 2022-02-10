@@ -13,4 +13,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 	@Query(value = "SELECT * FROM order_details WHERE cancel = false", nativeQuery = true)
 	List<Order> findOrdersWhereCancelFalse();
 
+	// get list of orders for specific user.
+	@Query(value = "SELECT * FROM order_details WHERE user_id = :user_id", nativeQuery = true)
+	List<Order> findOrdersByUserId(Long user_id);
 }

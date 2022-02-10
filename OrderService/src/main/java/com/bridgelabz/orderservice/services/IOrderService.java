@@ -14,8 +14,8 @@ public interface IOrderService {
 
 	public Order cancelOrder(Long order_id, String token);
 
-	public List<Order> getAllOrdersData();
+	public List<Order> getAllOrdersData(String token);
 
-	public Order getOrdersForSpecificUser(Long id, String token);
+	public List<Order> getAllOrdersForSpecificUser(String token);
 
 }

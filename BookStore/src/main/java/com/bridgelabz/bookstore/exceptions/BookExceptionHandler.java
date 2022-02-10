@@ -9,6 +9,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 
 import com.bridgelabz.bookstore.dto.ResponseDTO;
 import com.bridgelabz.bookstore.exceptions.customexceptions.BookException;
@@ -35,5 +36,12 @@ public class BookExceptionHandler {
 	public ResponseEntity<ResponseDTO> handleBookException(BookException exception) {
 		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+	}
+
+	/*** Handling invalid token exception. ***/
+	@ExceptionHandler(HttpClientErrorException.class)
+	public ResponseEntity<ResponseDTO> handleHttpClientErrorException(HttpClientErrorException exception) {
+		ResponseDTO responseDTO = new ResponseDTO(MESSAGE, exception.getMessage());
+		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.UNAUTHORIZED);
 	}
 }

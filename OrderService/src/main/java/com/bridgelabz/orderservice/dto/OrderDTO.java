@@ -31,8 +31,6 @@ public @ToString class OrderDTO {
 	@NotEmpty(message = "address cannot be empty...!")
 	public String address;
 
-	public long user_id;
-
 	public long book_id;
 
 }

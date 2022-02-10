@@ -43,23 +43,24 @@ public class CartController {
 
 	/*** Add to cart ***/
 	@PostMapping(value = "/add")
-	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody CartDTO cart) {
+	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody CartDTO cart,
+			@RequestHeader(name = "token") String token) {
 		log.info("Cart DTO :- " + cart.toString()); // logging.
-		Cart cartData = cartService.addToCart(cart);
+		Cart cartData = cartService.addToCart(cart, token);
 		ResponseDTO responseDTO = new ResponseDTO("Added to cart successfully..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	/*** Delete Book details by using ID. ***/
 	@DeleteMapping(value = "/remove/{cart_id}")
-	public ResponseEntity<ResponseDTO> delete(@PathVariable Long cart_id) {
-		String deletedMessage = cartService.deleteCartDetailsId(cart_id);
+	public ResponseEntity<ResponseDTO> delete(@PathVariable Long cart_id, @RequestHeader(name = "token") String token) {
+		String deletedMessage = cartService.deleteCartDetailsId(cart_id , token);
 		ResponseDTO responseDTO = new ResponseDTO("Delete Call for Cart successfull..!", deletedMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	/*** Update quantity. ***/
-	@PutMapping(value = "update/{cart_id}")
+	@PutMapping(value = "/update/{cart_id}")
 	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id,
 			@RequestParam(value = "quantity") int quantity, @RequestHeader(name = "token") String token) {
 		Cart cartData = cartService.updateQuantity(cart_id, quantity, token);
@@ -68,18 +69,18 @@ public class CartController {
 	}
 
 	/*** Get All cart items. ***/
-	@GetMapping(value = "getAll")
-	public ResponseEntity<ResponseDTO> getALL() {
-		List<Cart> AllcartItems = cartService.getAllCartItems();
+	@GetMapping(value = "/getAll")
+	public ResponseEntity<ResponseDTO> getALL(@RequestHeader(name = "token") String token) {
+		List<Cart> AllcartItems = cartService.getAllCartItems(token);
 		ResponseDTO responseDTO = new ResponseDTO("Get All Call for Cart items successfull..!", AllcartItems);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
-	/*** Get Cart by id. ***/
-	@GetMapping(value = "get/{cart_id}")
-	public ResponseEntity<ResponseDTO> get(@PathVariable Long cart_id, @RequestHeader(name = "token") String token) {
-		Cart cartData = cartService.getCartById(cart_id, token);
-		ResponseDTO responseDTO = new ResponseDTO("Get Call for Cart successfull..!", cartData);
+	/*** Get all cart items for specific user. ***/
+	@GetMapping(value = "/get")
+	public ResponseEntity<ResponseDTO> get(@RequestHeader(name = "token") String token) {
+		List<Cart> cartData = cartService.getAllCartItemsForUser(token);
+		ResponseDTO responseDTO = new ResponseDTO("Get Cart items for user successfull..!", cartData);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
