@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/user")
 @Slf4j
+@CrossOrigin("http://localhost:4200")
 public class UserController {
 
 	@Autowired // Autowired annotation is used for automatic dependency injection.
@@ -82,9 +84,9 @@ public class UserController {
 	}
 
 	/*** read user details by using ID . ***/
-	@GetMapping(value = "/read/{id}")
-	public ResponseEntity<ResponseDTO> getEmployee(@PathVariable String id,
-			@RequestHeader(name = "token") String token) {
+	@GetMapping(value = "/read/{id}/{token}")
+	public ResponseEntity<ResponseDTO> getUser(@PathVariable String id,
+			@PathVariable String token) {
 		User userData = userService.readUserById(id, token);
 		ResponseDTO responseDTO = new ResponseDTO("Read Call for ID successfull..!", userData,
 				tokenUtil.createToken(Long.parseLong(id)));
@@ -112,8 +114,15 @@ public class UserController {
 	@GetMapping(value = "/login/{email}/{password}")
 	public ResponseEntity<ResponseDTO> login(@PathVariable String email, @PathVariable String password) {
 		User userData = userService.userLogin(email, password);
-		ResponseDTO responseDTO = new ResponseDTO("Login successfull..!", userData,
-				tokenUtil.createToken(userData.getId()));
+		ResponseDTO responseDTO;
+		if (userData.getId() != 0) {
+			responseDTO = new ResponseDTO("Login successfull..!", userData,
+					tokenUtil.createToken(userData.getId()));
+		}
+		else {
+			responseDTO = new ResponseDTO("Login failed..!", userData,
+					tokenUtil.createToken(userData.getId()));
+		}
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
@@ -121,7 +130,7 @@ public class UserController {
 	@GetMapping(value = "/forgetPassword")
 	public ResponseEntity<ResponseDTO> forgetPassword(@RequestParam(value = "email") String email) {
 		String getMessage = userService.forgetPasswordLink(email);
-		ResponseDTO responseDTO = new ResponseDTO("Rest PassWord sent to email successfully..!", getMessage);
+		ResponseDTO responseDTO = new ResponseDTO("Reset PassWord Link sent to email successfully..!", getMessage);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
 
@@ -165,17 +174,17 @@ public class UserController {
 		ResponseDTO responseDTO = new ResponseDTO("Purchased Successfully...!", userData, token);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
-	
+
 	/*** Checking user is present or not in the database by using token. ***/
 	@GetMapping(value = "/checkuser/{token}")
 	public boolean checkUser(@PathVariable String token) {
 		return userService.checkIfUserIsPresentOrNot(token);
 	}
-	
+
 	/*** Decoding the token and returns id. ***/
 	@GetMapping(value = "/decode/{token}")
 	public Long decodingToken(@PathVariable String token) {
 		return tokenUtil.decodeToken(token);
 	}
-	
+
 }

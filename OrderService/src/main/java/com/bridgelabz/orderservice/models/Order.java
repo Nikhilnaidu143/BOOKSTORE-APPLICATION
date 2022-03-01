@@ -38,7 +38,7 @@ public @Data class Order {
 
 	/*** Parameterized constructor. ***/
 	public Order(OrderDTO orderDTO) {
-		this.order_date = orderDTO.order_date;
+		this.order_date = null;
 		this.price = orderDTO.price;
 		this.quantity = orderDTO.quantity;
 		this.address = orderDTO.address;

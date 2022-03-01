@@ -1,5 +1,7 @@
 package com.bridgelabz.orderservice.services;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,6 +50,8 @@ public class OrderService implements IOrderService {
 		} else {
 			Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 			Order orderData = new Order(order);
+			LocalDate todaysDate = LocalDate.now();
+			orderData.setOrder_date(todaysDate); //setting todays date as order date.
 			orderData.setUser_id(user_id);
 			return orderRepository.save(orderData);
 		}

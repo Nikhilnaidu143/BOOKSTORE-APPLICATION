@@ -161,19 +161,11 @@ public class UserService implements IUserService {
 	@Override
 	public User userLogin(String email, String password) {
 		List<User> users = userRepository.findUserByEmail(email);
-		boolean pattern_password_matching = Pattern.compile(PASSWORD_REGEX).matcher(password).matches();
-		boolean pattern_email_matching = Pattern.compile(EMAIL_REGEX).matcher(email).matches();
-
-		if (!pattern_password_matching && !pattern_email_matching) {
-			throw new UserException("Email & Password validation failed...!");
-		} else if (!pattern_email_matching) {
-			throw new UserException("Email validation failed...!");
-		} else if (!pattern_password_matching) {
-			throw new UserException(PASSWORD_NOTVALID);
-		} else if (users.size() < 1) {
-			throw new UserException(USER_NOT_FOUND);
-		} else if (!users.get(0).getPassword().equals(password)) {
-			throw new UserException("Password is incorrect..!");
+		if (users.size() < 1) {
+			return new User(new UserDTO());
+		} 
+		else if (!users.get(0).getPassword().equals(password)) {
+			return new User(new UserDTO());
 		} else {
 			return users.get(0);
 		}

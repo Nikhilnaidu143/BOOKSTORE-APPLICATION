@@ -46,13 +46,8 @@ public class BookService implements IBookService {
 
 	/*** adding book details in the database. ***/
 	@Override
-	public Book insertBook(BookDTO book, String token) {
-		boolean isUserPresent = restTemplate.getForObject(URL + token, Boolean.class);
-		if (!isUserPresent) {
-			throw new BookException(USER_NOT_FOUND);
-		} else {
-			return bookRepository.save(new Book(book));
-		}
+	public Book insertBook(BookDTO book) {
+		return bookRepository.save(new Book(book));
 	}
 
 	/*** updating book details by id ***/

@@ -10,7 +10,7 @@ public interface IBookService {
 	/*** Declaring methods. ***/
 	public String helloMessage(String token);
 
-	public Book insertBook(BookDTO book, String token);
+	public Book insertBook(BookDTO book);
 
 	public Book updateBookDetails(BookDTO book, Long id, String token);
 

@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/order")
 @Slf4j
+@CrossOrigin("http://localhost:4200")
 public class OrderController {
 
 	@Autowired // AutoWired annotation is used for automatic dependency injection.
@@ -40,9 +42,8 @@ public class OrderController {
 	}
 
 	/*** Place order. ***/
-	@PostMapping(value = "/place")
-	public ResponseEntity<ResponseDTO> insert(@Valid @RequestBody OrderDTO order,
-			@RequestHeader(name = "token") String token) {
+	@PostMapping(value = "/place/{token}")
+	public ResponseEntity<ResponseDTO> insert(@PathVariable String token , @Valid @RequestBody OrderDTO order) {
 		log.info("Order DTO :- " + order.toString()); // logging.
 		Order orderData = orderService.placeOrder(order, token);
 		ResponseDTO responseDTO = new ResponseDTO("Order placed successfully..!", orderData);

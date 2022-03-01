@@ -45,14 +45,25 @@ public class CartService implements ICartService {
 
 	/*** Added to cart. ***/
 	@Override
-	public Cart addToCart(CartDTO cart, String token) {
+	public Cart addToCart(CartDTO cart, String token, Long book_id) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
 		if (!isUserPresent) {
 			throw new CartException(USER_NOT_FOUND);
 		} else {
+			Long count = cartRepository.count();
+			if(count > 0) {
+				List<Cart> cartItemsByBookID = cartRepository.findCartItemsByBook_id(book_id);
+				if(cartItemsByBookID.size() > 0) {
+					CartDTO cartDTO = new CartDTO();
+					cartDTO.book_id = (long) 0;
+					System.out.println(cartDTO); //checking
+					return new Cart(cartDTO);
+				}
+			}
 			Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 			Cart cartData = new Cart(cart);
 			cartData.setUser_id(user_id);
+			cartData.setBook_id(book_id);
 			return cartRepository.save(cartData);
 		}
 	}
@@ -98,13 +109,8 @@ public class CartService implements ICartService {
 
 	/*** Get all cart items. ***/
 	@Override
-	public List<Cart> getAllCartItems(String token) {
-		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
-		if (!isUserPresent) {
-			throw new CartException(USER_NOT_FOUND);
-		} else {
-			return cartRepository.findAll();
-		}
+	public List<Cart> getAllCartItems() {
+		return cartRepository.findAll();
 	}
 
 	/*** Get all cart items for specific user. ***/
@@ -116,6 +122,19 @@ public class CartService implements ICartService {
 		} else {
 			Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 			return cartRepository.findCartItemsByUserId(user_id);
+		}
+	}
+
+	/** Delete cart items. **/
+	@Override
+	public String deleteByBookId(Long bookId , String token) {
+		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		if (!isUserPresent) {
+			throw new CartException(USER_NOT_FOUND);
+		} else {
+			Cart cartDataById = cartRepository.findByBookId(bookId);
+			cartRepository.deleteById(cartDataById.getId());
+			return "Cart details deleted from the database...!";
 		}
 	}
 

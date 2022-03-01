@@ -1,0 +1,53 @@
+2022-03-01 09:17.19.592 [INFO] [restartedMain] [c.b.w.WishlistServiceApplication:55] Starting WishlistServiceApplication using Java 15.0.2 on DESKTOP-F8A42Q9 with PID 104404 (C:\Users\VICKY\Desktop\BookStoreCFP\WishlistService\target\classes started by VICKY in C:\Users\VICKY\Desktop\BookStoreCFP\WishlistService)
+2022-03-01 09:17.19.592 [DEBUG] [restartedMain] [c.b.w.WishlistServiceApplication:56] Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-01 09:17.19.592 [INFO] [restartedMain] [c.b.w.WishlistServiceApplication:646] The following 1 profile is active: "PROD"
+2022-03-01 09:17.20.80 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:132] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-01 09:17.20.118 [INFO] [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate:201] Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2022-03-01 09:17.20.240 [INFO] [restartedMain] [o.s.c.c.s.GenericScope:283] BeanFactory id=b5f1dbff-9aca-31cf-ac6f-542b59ecb3b5
+2022-03-01 09:17.20.366 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:108] Tomcat initialized with port(s): 8085 (http)
+2022-03-01 09:17.20.367 [INFO] [restartedMain] [o.a.c.c.StandardService:173] Starting service [Tomcat]
+2022-03-01 09:17.20.368 [INFO] [restartedMain] [o.a.c.c.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-01 09:17.20.449 [INFO] [restartedMain] [o.a.c.c.C.[.[.[/]:173] Initializing Spring embedded WebApplicationContext
+2022-03-01 09:17.20.450 [INFO] [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext:290] Root WebApplicationContext: initialization completed in 854 ms
+2022-03-01 09:17.20.538 [INFO] [restartedMain] [c.z.h.HikariDataSource:110] HikariPool-17 - Starting...
+2022-03-01 09:17.20.584 [INFO] [restartedMain] [c.z.h.HikariDataSource:123] HikariPool-17 - Start completed.
+2022-03-01 09:17.20.761 [INFO] [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-01 09:17.21.158 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-01 09:17.21.390 [WARN] [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer:61] Unable to start LiveReload server
+2022-03-01 09:17.21.847 [INFO] [restartedMain] [o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration:68] Eureka HTTP Client uses RestTemplate.
+2022-03-01 09:17.22.222 [WARN] [restartedMain] [o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:82] Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-03-01 09:17.22.234 [INFO] [restartedMain] [o.s.c.n.e.InstanceInfoFactory:67] Setting initial instance status as: STARTING
+2022-03-01 09:17.22.238 [INFO] [restartedMain] [c.n.d.DiscoveryClient:372] Initializing Eureka in region us-east-1
+2022-03-01 09:17.22.239 [INFO] [restartedMain] [c.n.d.s.r.a.ConfigClusterResolver:43] Resolving eureka endpoints via configuration
+2022-03-01 09:17.22.246 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1007] Disable delta property : false
+2022-03-01 09:17.22.247 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1008] Single vip registry refresh property : null
+2022-03-01 09:17.22.247 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1009] Force full registry fetch : false
+2022-03-01 09:17.22.248 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1010] Application is null : false
+2022-03-01 09:17.22.248 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1011] Registered Applications size is zero : true
+2022-03-01 09:17.22.248 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1013] Application version is -1: true
+2022-03-01 09:17.22.248 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1097] Getting all instance registry info from the eureka server
+2022-03-01 09:17.22.283 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1106] The response status is 200
+2022-03-01 09:17.22.284 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1321] Starting heartbeat executor: renew interval is: 30
+2022-03-01 09:17.22.286 [INFO] [restartedMain] [c.n.d.InstanceInfoReplicator:60] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-03-01 09:17.22.287 [INFO] [restartedMain] [c.n.d.DiscoveryClient:492] Discovery Client initialized at timestamp 1646106442287 with initial instances count: 2
+2022-03-01 09:17.22.289 [INFO] [restartedMain] [o.s.c.n.e.s.EurekaServiceRegistry:41] Registering application WISHLIST-SERVER with eureka with status UP
+2022-03-01 09:17.22.289 [INFO] [restartedMain] [c.n.d.DiscoveryClient:1352] Saw local status change event StatusChangeEvent [timestamp=1646106442289, current=UP, previous=STARTING]
+2022-03-01 09:17.22.290 [INFO] [DiscoveryClient-InstanceInfoReplicator-0] [c.n.d.DiscoveryClient:873] DiscoveryClient_WISHLIST-SERVER/DESKTOP-F8A42Q9:wishlist-server:8085: registering service...
+2022-03-01 09:17.22.294 [INFO] [restartedMain] [o.s.b.w.e.t.TomcatWebServer:220] Tomcat started on port(s): 8085 (http) with context path ''
+2022-03-01 09:17.22.295 [INFO] [restartedMain] [o.s.c.n.e.s.EurekaAutoServiceRegistration:144] Updating port to 8085
+2022-03-01 09:17.22.332 [INFO] [DiscoveryClient-InstanceInfoReplicator-0] [c.n.d.DiscoveryClient:882] DiscoveryClient_WISHLIST-SERVER/DESKTOP-F8A42Q9:wishlist-server:8085 - registration status: 204
+2022-03-01 09:17.22.687 [INFO] [restartedMain] [c.b.w.WishlistServiceApplication:61] Started WishlistServiceApplication in 3.77 seconds (JVM running for 1258.78)
+2022-03-01 09:17.22.689 [INFO] [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:63] Condition evaluation unchanged
+2022-03-01 09:17.22.690 [INFO] [restartedMain] [c.b.w.WishlistServiceApplication:25] wishlist Service Started in PROD Environment...!
+2022-03-01 09:17.22.691 [INFO] [restartedMain] [c.b.w.WishlistServiceApplication:26] wishlist Service DataBase User Is cfpbookstoreuser.
+2022-03-01 09:17.45.855 [INFO] [Thread-97] [o.s.c.n.e.s.EurekaServiceRegistry:62] Unregistering application WISHLIST-SERVER with eureka with status DOWN
+2022-03-01 09:17.45.857 [INFO] [Thread-97] [c.n.d.DiscoveryClient:1352] Saw local status change event StatusChangeEvent [timestamp=1646106465857, current=DOWN, previous=UP]
+2022-03-01 09:17.45.858 [INFO] [DiscoveryClient-InstanceInfoReplicator-0] [c.n.d.DiscoveryClient:873] DiscoveryClient_WISHLIST-SERVER/DESKTOP-F8A42Q9:wishlist-server:8085: registering service...
+2022-03-01 09:17.45.876 [INFO] [DiscoveryClient-InstanceInfoReplicator-0] [c.n.d.DiscoveryClient:882] DiscoveryClient_WISHLIST-SERVER/DESKTOP-F8A42Q9:wishlist-server:8085 - registration status: 204
+2022-03-01 09:17.45.933 [INFO] [Thread-97] [o.s.o.j.LocalContainerEntityManagerFactoryBean:651] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-01 09:17.45.935 [INFO] [Thread-97] [c.z.h.HikariDataSource:350] HikariPool-17 - Shutdown initiated...
+2022-03-01 09:17.45.951 [INFO] [Thread-97] [c.z.h.HikariDataSource:352] HikariPool-17 - Shutdown completed.
+2022-03-01 09:17.45.952 [INFO] [Thread-97] [c.n.d.DiscoveryClient:935] Shutting down DiscoveryClient ...
+2022-03-01 09:17.48.957 [INFO] [Thread-97] [c.n.d.DiscoveryClient:971] Unregistering ...
+2022-03-01 09:17.48.982 [INFO] [Thread-97] [c.n.d.DiscoveryClient:973] DiscoveryClient_WISHLIST-SERVER/DESKTOP-F8A42Q9:wishlist-server:8085 - deregister  status: 200
+2022-03-01 09:17.49.08 [INFO] [Thread-97] [c.n.d.DiscoveryClient:960] Completed shut down of DiscoveryClient

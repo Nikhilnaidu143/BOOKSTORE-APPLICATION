@@ -11,6 +11,8 @@ import javax.validation.constraints.Pattern;
 import com.bridgelabz.userregistration.services.UserService;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 public @ToString class UserDTO {
@@ -23,7 +25,7 @@ public @ToString class UserDTO {
 	@Pattern(regexp = "^[A-Z]{1}[a-zA-Z]{2,}$", message = "Last name validation failed..!")
 	public String last_name;
 
-	@NotNull(message = "KYC cannot be null...!")
+//	@NotNull(message = "KYC cannot be null...!")
 	public String kyc;
 
 	@NotNull(message = "Date of birth cannot be null...!")
@@ -36,7 +38,7 @@ public @ToString class UserDTO {
 	@PastOrPresent(message = "Registered date cannot be future date...!")
 	public LocalDate registered_date;
 
-	@NotNull(message = "Updated date cannot be null...!")
+//	@NotNull(message = "Updated date cannot be null...!")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@PastOrPresent(message = "Updated date cannot be future date...!")
 	public LocalDate updated_date;

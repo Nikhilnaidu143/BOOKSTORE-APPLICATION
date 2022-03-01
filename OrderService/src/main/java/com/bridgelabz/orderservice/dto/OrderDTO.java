@@ -14,10 +14,10 @@ import lombok.ToString;
 
 public @ToString class OrderDTO {
 
-	@NotNull(message = "Order date cannot be null...!")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	@PastOrPresent(message = "Order date cannot be future date...!")
-	public LocalDate order_date;
+//	@NotNull(message = "Order date cannot be null...!")
+//	@JsonFormat(pattern = "yyyy-MM-dd")
+//	@PastOrPresent(message = "Order date cannot be future date...!")
+//	public LocalDate order_date;
 
 	@NotNull(message = "Price cannot be null...!")
 	@Min(value = 100, message = "Price must be greater than 100...!")
