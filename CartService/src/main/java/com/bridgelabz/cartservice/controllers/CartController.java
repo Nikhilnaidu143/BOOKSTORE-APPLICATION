@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,7 +61,7 @@ public class CartController {
 	}
 
 	/*** Update quantity. ***/
-	@PutMapping(value = "/update/{cart_id}/{token}")
+	@GetMapping(value = "/update/{cart_id}/{token}")
 	public ResponseEntity<ResponseDTO> update(@PathVariable Long cart_id, @PathVariable String token,
 			@RequestParam(value = "quantity") int quantity) {
 		Cart cartData = cartService.updateQuantity(cart_id, quantity, token);

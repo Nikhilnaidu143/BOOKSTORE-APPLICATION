@@ -16,6 +16,7 @@ public class WishlistService implements IWishlistService {
 
 	/*** Constant custom exception variables. ***/
 	public static final String USER_NOT_FOUND = "OOPS! user not found in the database...!";
+	public static final String ID_NOT_FOUND = "OOPS! Id not found in the database...!";
 	
 	@Autowired
 	private WishlistRepository wishlistRepository;
@@ -29,20 +30,29 @@ public class WishlistService implements IWishlistService {
 	@Override
 	public Wishlist addToWishlist(WishlistDTO wishlist, String token, Long book_id) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
+		boolean flag = false;
 		if (!isUserPresent) {
 			throw new WishlistException(USER_NOT_FOUND);
 		} else {
 			Long count = wishlistRepository.count();
 			if (count > 0) {
 				List<Wishlist> wishlisttemsByBookID = wishlistRepository.findWishlistItemsByBook_id(book_id);
-				if (wishlisttemsByBookID.size() > 0) {
+				for (Wishlist wishlist2 : wishlisttemsByBookID) {
+					if(wishlist2.getUser_id() == user_id) {
+						flag = true;
+					} 
+					else {
+						flag = false;
+					}
+				}
+				if (wishlisttemsByBookID.size() > 0 && flag) {
 					WishlistDTO wishlistDTO = new WishlistDTO();
 					wishlistDTO.book_id = (long) 0;
 					System.out.println(wishlistDTO); // checking
 					return new Wishlist(wishlistDTO);
 				}
 			}
-			Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 			Wishlist wishlistData = new Wishlist(wishlist);
 			wishlistData.setUser_id(user_id);
 			wishlistData.setBook_id(book_id);
@@ -66,12 +76,25 @@ public class WishlistService implements IWishlistService {
 	@Override
 	public String deleteByBookId(Long bookId , String token) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		Long userId = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 		if (!isUserPresent) {
 			throw new WishlistException(USER_NOT_FOUND);
 		} else {
-			Wishlist wishlistDataById = wishlistRepository.findByBookId(bookId);
-			wishlistRepository.deleteById(wishlistDataById.getId());
-			return "Cart details deleted from the database...!";
+			List<Wishlist> wishlistItemsByBookId = wishlistRepository.findWishlistItemsByBook_id(bookId);
+			if(wishlistItemsByBookId.size() == 0) {
+				throw new WishlistException(ID_NOT_FOUND);
+			} else {
+				for (Wishlist wishlist : wishlistItemsByBookId) {
+					if(wishlist.getUser_id() == userId) {
+						wishlistRepository.deleteById(wishlist.getId());
+						return "Wishlist details deleted from the database...!";
+					}
+					else {
+						continue;
+					}
+				}
+			}
+			return "Wishlist item not found";
 		}
 	}
 }

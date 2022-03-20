@@ -47,20 +47,28 @@ public class CartService implements ICartService {
 	@Override
 	public Cart addToCart(CartDTO cart, String token, Long book_id) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
+		boolean flag = false;
 		if (!isUserPresent) {
 			throw new CartException(USER_NOT_FOUND);
 		} else {
 			Long count = cartRepository.count();
-			if(count > 0) {
+			if (count > 0) {
 				List<Cart> cartItemsByBookID = cartRepository.findCartItemsByBook_id(book_id);
-				if(cartItemsByBookID.size() > 0) {
+				for (Cart cart2 : cartItemsByBookID) {
+					if (cart2.getUser_id() == user_id) {
+						flag = true;
+					} else {
+						flag = false;
+					}
+				}
+				if (cartItemsByBookID.size() > 0 && flag) {
 					CartDTO cartDTO = new CartDTO();
 					cartDTO.book_id = (long) 0;
-					System.out.println(cartDTO); //checking
+					System.out.println(cartDTO); // checking
 					return new Cart(cartDTO);
 				}
 			}
-			Long user_id = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 			Cart cartData = new Cart(cart);
 			cartData.setUser_id(user_id);
 			cartData.setBook_id(book_id);
@@ -87,22 +95,29 @@ public class CartService implements ICartService {
 
 	/*** Update quantity. ***/
 	@Override
-	public Cart updateQuantity(Long cart_id, int quantity, String token) {
+	public Cart updateQuantity(Long bookId, int quantity, String token) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		Long userId = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 		if (!isUserPresent) {
 			throw new CartException(USER_NOT_FOUND);
 		} else {
-			Optional<Cart> cartById = cartRepository.findById(cart_id);
-			if (!cartById.isPresent()) {
+			List<Cart> cartItemsByBookId = cartRepository.findCartItemsByBook_id(bookId);
+			Cart tempCart = null;
+			if (cartItemsByBookId.size() <= 0) {
 				log.error(ID_NOT_FOUND);
 				throw new CartException(ID_NOT_FOUND);
 			} else if (quantity <= 0 || quantity > 100) {
 				throw new CartException(QUANTITY_NOT_VALID);
 			} else {
-				Cart cart = cartById.get();
-				cart.setUser_id(cartById.get().getUser_id());
-				cart.setQuantity(quantity);
-				return cartRepository.save(cart);
+				for (Cart cart : cartItemsByBookId) {
+					if (cart.getUser_id() == userId) {
+						cart.setQuantity(quantity);
+						tempCart = cart;
+					} else {
+						continue;
+					}
+				}
+				return cartRepository.save(tempCart);
 			}
 		}
 	}
@@ -127,14 +142,26 @@ public class CartService implements ICartService {
 
 	/** Delete cart items. **/
 	@Override
-	public String deleteByBookId(Long bookId , String token) {
+	public String deleteByBookId(Long bookId, String token) {
 		boolean isUserPresent = restTemplate.getForObject(URL_CHECK_USER + token, Boolean.class);
+		Long userId = restTemplate.getForObject(URL_DECODE_TOKEN + token, Long.class);
 		if (!isUserPresent) {
 			throw new CartException(USER_NOT_FOUND);
 		} else {
-			Cart cartDataById = cartRepository.findByBookId(bookId);
-			cartRepository.deleteById(cartDataById.getId());
-			return "Cart details deleted from the database...!";
+			List<Cart> cartItemsByBookId = cartRepository.findCartItemsByBook_id(bookId);
+			if (cartItemsByBookId.size() == 0) {
+				throw new CartException(ID_NOT_FOUND);
+			} else {
+				for (Cart cart : cartItemsByBookId) {
+					if (cart.getUser_id() == userId) {
+						cartRepository.deleteById(cart.getId());
+						return "Cart details deleted from the database...!";
+					} else {
+						continue;
+					}
+				}
+			}
+			return "Cart item not found";
 		}
 	}
 
